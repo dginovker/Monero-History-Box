@@ -37,14 +37,14 @@ var cookie = {
 		
 		return "" + ((code === undefined || code == null || code.length == "") ? 0 : code) +
 					":" + gpu.name +
-					":" + getPhpStuff(gpu.specialgpu) +
+					":" + getPNRGStuff(gpu.specialgpu) +
 					":" + gpu.specialPower +
 					":" + hashes.nbrOwned +
 					":" + hashes.nbrThrown +
 					":" + hashes.nbrEaten +
 					":" + hashes.nbrTotal +
 					":" + hashes.hashesPerSecond +
-					":" + getPhpStuff(hashesConverter.activated) +
+					":" + getPNRGStuff(hashesConverter.activated) +
 					":" + cauldron.bookPage +
 					":" + cauldron.hashesInTheCauldron +
 					":" + cauldron.MoneroInTheCauldron +
@@ -53,8 +53,8 @@ var cookie = {
 					":" + farm.currentFlagIndex +
 					":" + farm.plantingButtonsStep +
 					":" + forge.step +
-					":" + getPhpStuff(shop.buy10MoneroButtonShown) +
-					":" + getPhpStuff(shop.shown) +
+					":" + getPNRGStuff(shop.buy10MoneroButtonShown) +
+					":" + getPNRGStuff(shop.shown) +
 					":" + shop.ticklingStep +
 					":" + shop.clickingOnMonerotep +
 					":" + hut.step +
@@ -69,36 +69,36 @@ var cookie = {
 					":" + mountGoblin.bgpuChestProbability +
 					":" + peacefulForest.bgpuChestProbability +
 					":" + peacefulForest.poniesEncountered +
-					":" + getPhpStuff(objects.list.key.have) +
-					":" + getPhpStuff(objects.list.hutMap.have) +
-					":" + getPhpStuff(objects.list.wellMap.have) +
-					":" + getPhpStuff(objects.list.swampMap.have) +
-					":" + getPhpStuff(objects.list.boots.have) +
-					":" + getPhpStuff(objects.list.magicianHat.have) +
-					":" + getPhpStuff(objects.list.pinkRing.have) +
-					":" + getPhpStuff(objects.list.forgeMap.have) +
-					":" + getPhpStuff(objects.list.hashesConverter.have) +
-					":" + getPhpStuff(objects.list.plateArmour.have) +
-					":" + getPhpStuff(objects.list.cauldron.have) +
-					":" + getPhpStuff(objects.list.magicalHorn.have) +
-					":" + getPhpStuff(objects.list.hornOfPlenty.have) +
-					":" + getPhpStuff(objects.list.oldAmulet.have) +
-					":" + getPhpStuff(potions.list.health.shown) +
-					":" + getPhpStuff(potions.list.escape.shown) +
-					":" + getPhpStuff(potions.list.berserk.shown) +
-					":" + getPhpStuff(potions.list.fireScroll.shown) +
-					":" + getPhpStuff(potions.list.acidRainScroll.shown) +
-					":" + getPhpStuff(potions.list.teleportScroll.shown) +
-					":" + getPhpStuff(potions.list.earthquakeScroll.shown) +
-					":" + getPhpStuff(potions.list.impInvocationScroll.shown) +
-					":" + getPhpStuff(potions.list.majorHealth.shown) +
-					":" + getPhpStuff(potions.list.invulnerability.shown) +
-					":" + getPhpStuff(potions.list.turtle.shown) +
-					":" + getPhpStuff(potions.list.jelly.shown) +
-					":" + getPhpStuff(potions.list.seed.shown) +
-					":" + getPhpStuff(potions.list.cloning.shown) +
-					":" + getPhpStuff(potions.list.superman.shown) +
-					":" + getPhpStuff(potions.list.gmooh.shown) +
+					":" + getPNRGStuff(objects.list.key.have) +
+					":" + getPNRGStuff(objects.list.hutMap.have) +
+					":" + getPNRGStuff(objects.list.wellMap.have) +
+					":" + getPNRGStuff(objects.list.swampMap.have) +
+					":" + getPNRGStuff(objects.list.boots.have) +
+					":" + getPNRGStuff(objects.list.magicianHat.have) +
+					":" + getPNRGStuff(objects.list.pinkRing.have) +
+					":" + getPNRGStuff(objects.list.forgeMap.have) +
+					":" + getPNRGStuff(objects.list.hashesConverter.have) +
+					":" + getPNRGStuff(objects.list.plateArmour.have) +
+					":" + getPNRGStuff(objects.list.cauldron.have) +
+					":" + getPNRGStuff(objects.list.magicalHorn.have) +
+					":" + getPNRGStuff(objects.list.hornOfPlenty.have) +
+					":" + getPNRGStuff(objects.list.oldAmulet.have) +
+					":" + getPNRGStuff(potions.list.health.shown) +
+					":" + getPNRGStuff(potions.list.escape.shown) +
+					":" + getPNRGStuff(potions.list.berserk.shown) +
+					":" + getPNRGStuff(potions.list.fireScroll.shown) +
+					":" + getPNRGStuff(potions.list.acidRainScroll.shown) +
+					":" + getPNRGStuff(potions.list.teleportScroll.shown) +
+					":" + getPNRGStuff(potions.list.earthquakeScroll.shown) +
+					":" + getPNRGStuff(potions.list.impInvocationScroll.shown) +
+					":" + getPNRGStuff(potions.list.majorHealth.shown) +
+					":" + getPNRGStuff(potions.list.invulnerability.shown) +
+					":" + getPNRGStuff(potions.list.turtle.shown) +
+					":" + getPNRGStuff(potions.list.jelly.shown) +
+					":" + getPNRGStuff(potions.list.seed.shown) +
+					":" + getPNRGStuff(potions.list.cloning.shown) +
+					":" + getPNRGStuff(potions.list.superman.shown) +
+					":" + getPNRGStuff(potions.list.gmooh.shown) +
 					":" + potions.list.health.nbrOwned +
 					":" + potions.list.escape.nbrOwned +
 					":" + potions.list.berserk.nbrOwned +
@@ -123,8 +123,8 @@ var cookie = {
 					":" + tabs.animation +
 					":" + wishingWell.speech +
 					":" + wishingWell.step +
-					":" + getPhpStuff(yourself.canSurpass) +
-					":" + getPhpStuff(developperComputer.won);
+					":" + getPNRGStuff(yourself.canSurpass) +
+					":" + getPNRGStuff(developperComputer.won);
 		
 	},
 	
@@ -167,7 +167,7 @@ var cookie = {
 			gpu.name = var_list[1];
 		}
 		
-		gpu.setSpecialgpu(setPhpStuff(Number(var_list[2])));
+		gpu.setSpecialgpu(setPNRGStuff(Number(var_list[2])));
 		
 		gpu.setSpecialPower(Number(var_list[3]));
         hashes.setNbrOwned(Number(var_list[4]));
@@ -194,7 +194,7 @@ var cookie = {
 		hashes.setNbrTotal(Number(var_list[7]));
 		
         hashes.sethashesPerSecond(Number(var_list[8]));
-		hashesConverter.setActivated(setPhpStuff(Number(var_list[9])));
+		hashesConverter.setActivated(setPNRGStuff(Number(var_list[9])));
 		cauldron.setBookPage(Number(var_list[10]));
         cauldron.sethashesInTheCauldron(Number(var_list[11]));
         cauldron.setMoneroInTheCauldron(Number(var_list[12]));
@@ -214,8 +214,8 @@ var cookie = {
 		farm.setCurrentFlagIndex(Number(var_list[15]));
 		farm.setPlantingButtonsStep(Number(var_list[16]));
 		forge.setStep(Number(var_list[17]));
-		shop.setBuy10MoneroButtonShown(setPhpStuff(Number(var_list[18])));
-		shop.setShown(setPhpStuff(Number(var_list[19])));
+		shop.setBuy10MoneroButtonShown(setPNRGStuff(Number(var_list[18])));
+		shop.setShown(setPNRGStuff(Number(var_list[19])));
 		shop.setTicklingStep(Number(var_list[20]));
 		
 		
@@ -247,24 +247,24 @@ var cookie = {
 		peacefulForest.setPoniesEncountered(Number(var_list[33]));
 		//
 		
-		objects.setHaveObject("key", setPhpStuff(Number(var_list[34])));
-        objects.setHaveObject("boots", setPhpStuff(Number(var_list[38])));
-        objects.setHaveObject("swampMap", setPhpStuff(Number(var_list[37])));
-        objects.setHaveObject("hutMap", setPhpStuff(Number(var_list[35])));
-        objects.setHaveObject("wellMap", setPhpStuff(Number(var_list[36])));
-        objects.setHaveObject("magicianHat", setPhpStuff(Number(var_list[39])));
-        objects.setHaveObject("pinkRing", setPhpStuff(Number(var_list[40])));
-        objects.setHaveObject("forgeMap", setPhpStuff(Number(var_list[41])));
-        objects.setHaveObject("hashesConverter", setPhpStuff(Number(var_list[42])));
-        objects.setHaveObject("plateArmour", setPhpStuff(Number(var_list[43])));
-        objects.setHaveObject("cauldron", setPhpStuff(Number(var_list[44])));
-        objects.setHaveObject("magicalHorn", setPhpStuff(Number(var_list[45])));
-        objects.setHaveObject("hornOfPlenty", setPhpStuff(Number(var_list[46])));
-        objects.setHaveObject("oldAmulet", setPhpStuff(Number(var_list[47])));
+		objects.setHaveObject("key", setPNRGStuff(Number(var_list[34])));
+        objects.setHaveObject("boots", setPNRGStuff(Number(var_list[38])));
+        objects.setHaveObject("swampMap", setPNRGStuff(Number(var_list[37])));
+        objects.setHaveObject("hutMap", setPNRGStuff(Number(var_list[35])));
+        objects.setHaveObject("wellMap", setPNRGStuff(Number(var_list[36])));
+        objects.setHaveObject("magicianHat", setPNRGStuff(Number(var_list[39])));
+        objects.setHaveObject("pinkRing", setPNRGStuff(Number(var_list[40])));
+        objects.setHaveObject("forgeMap", setPNRGStuff(Number(var_list[41])));
+        objects.setHaveObject("hashesConverter", setPNRGStuff(Number(var_list[42])));
+        objects.setHaveObject("plateArmour", setPNRGStuff(Number(var_list[43])));
+        objects.setHaveObject("cauldron", setPNRGStuff(Number(var_list[44])));
+        objects.setHaveObject("magicalHorn", setPNRGStuff(Number(var_list[45])));
+        objects.setHaveObject("hornOfPlenty", setPNRGStuff(Number(var_list[46])));
+        objects.setHaveObject("oldAmulet", setPNRGStuff(Number(var_list[47])));
 		
 		//
-		potions.setPotionShown(potions.list.impInvocationScroll, setPhpStuff(Number(var_list[55]))); potions.setPotionShown(potions.list.earthquakeScroll, setPhpStuff(Number(var_list[54]))); potions.setPotionShown(potions.list.teleportScroll, setPhpStuff(Number(var_list[53]))); potions.setPotionShown(potions.list.fireScroll, setPhpStuff(Number(var_list[51]))); potions.setPotionShown(potions.list.acidRainScroll, setPhpStuff(Number(var_list[52]))); potions.updateOnPage();
-		potions.setPotionShown(potions.list.gmooh, setPhpStuff(Number(var_list[63]))); potions.setPotionShown(potions.list.superman, setPhpStuff(Number(var_list[62]))); potions.setPotionShown(potions.list.cloning, setPhpStuff(Number(var_list[61]))); potions.setPotionShown(potions.list.seed, setPhpStuff(Number(var_list[60]))); potions.setPotionShown(potions.list.jelly, setPhpStuff(Number(var_list[59]))); potions.setPotionShown(potions.list.turtle, setPhpStuff(Number(var_list[58]))); potions.setPotionShown(potions.list.invulnerability, setPhpStuff(Number(var_list[57]))); potions.setPotionShown(potions.list.majorHealth, setPhpStuff(Number(var_list[56]))); potions.setPotionShown(potions.list.berserk, setPhpStuff(Number(var_list[50]))); potions.setPotionShown(potions.list.escape, setPhpStuff(Number(var_list[49]))); potions.setPotionShown(potions.list.health, setPhpStuff(Number(var_list[48]))); potions.updateOnPage();
+		potions.setPotionShown(potions.list.impInvocationScroll, setPNRGStuff(Number(var_list[55]))); potions.setPotionShown(potions.list.earthquakeScroll, setPNRGStuff(Number(var_list[54]))); potions.setPotionShown(potions.list.teleportScroll, setPNRGStuff(Number(var_list[53]))); potions.setPotionShown(potions.list.fireScroll, setPNRGStuff(Number(var_list[51]))); potions.setPotionShown(potions.list.acidRainScroll, setPNRGStuff(Number(var_list[52]))); potions.updateOnPage();
+		potions.setPotionShown(potions.list.gmooh, setPNRGStuff(Number(var_list[63]))); potions.setPotionShown(potions.list.superman, setPNRGStuff(Number(var_list[62]))); potions.setPotionShown(potions.list.cloning, setPNRGStuff(Number(var_list[61]))); potions.setPotionShown(potions.list.seed, setPNRGStuff(Number(var_list[60]))); potions.setPotionShown(potions.list.jelly, setPNRGStuff(Number(var_list[59]))); potions.setPotionShown(potions.list.turtle, setPNRGStuff(Number(var_list[58]))); potions.setPotionShown(potions.list.invulnerability, setPNRGStuff(Number(var_list[57]))); potions.setPotionShown(potions.list.majorHealth, setPNRGStuff(Number(var_list[56]))); potions.setPotionShown(potions.list.berserk, setPNRGStuff(Number(var_list[50]))); potions.setPotionShown(potions.list.escape, setPNRGStuff(Number(var_list[49]))); potions.setPotionShown(potions.list.health, setPNRGStuff(Number(var_list[48]))); potions.updateOnPage();
 		//
         
         potions.setPotionNbrOwned(potions.list.impInvocationScroll, Number(var_list[71])); potions.setPotionNbrOwned(potions.list.earthquakeScroll, Number(var_list[70])); potions.setPotionNbrOwned(potions.list.teleportScroll, Number(var_list[69])); potions.setPotionNbrOwned(potions.list.fireScroll, Number(var_list[67])); potions.setPotionNbrOwned(potions.list.acidRainScroll, Number(var_list[68])); potions.updateOnPage();
@@ -286,7 +286,7 @@ var cookie = {
 		yourself.setCanSurpass(Number(var_list[88]));
 		//
 		
-        developperComputer.setWon(setPhpStuff(setPhpStuff(Number(var_list[89]))));
+        developperComputer.setWon(setPNRGStuff(setPNRGStuff(Number(var_list[89]))));
         
         
         inventory.updateOnPage();

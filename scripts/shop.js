@@ -147,7 +147,7 @@ var shop = {
         // We show the shop
         if(htmlInteraction.isElementVisible("shop") == false){ // If the shop isn't already visible
             htmlInteraction.setElementVisibility("shop", true);
-            this.setMerchantSpeech("Hello, I'm the hash merchant. I would do anything for hashes. My Monero are delicious!");
+            this.setMerchantSpeech("Hello, I'm the Pool Operator. I would do anything for hashes. My Monero are delicious!");
         }
         
         // And the Monero we can buy :)

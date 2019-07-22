@@ -15,7 +15,7 @@ var farm = {
         if(this.MoneroPlanted <= 293){ // sqrt(86400) = 293
             this.MoneroPerDay = Math.pow(this.MoneroPlanted, 2); // 293 will give 85849
         }
-        else{ // When we're counting in lp/sec, this function is used instead of the other one. It will stabilize the curve.
+        else{ // When we're counting in Monero/sec, this function is used instead of the other one. It will stabilize the curve.
             var prod = (this.MoneroPlanted - 122) * 500; // 194 will give 86000
             if(prod < this.maxMoneroPerDay) this.MoneroPerDay = prod;
             else this.MoneroPerDay = this.maxMoneroPerDay;
@@ -29,16 +29,16 @@ var farm = {
         // Update on page
         switch(this.plantingButtonsStep){
             case 1:
-                htmlInteraction.setInnerHtml("lp_buttons", "<button class=\"home_button\" id=\"plant_1_lp\" onClick=\"farm.plantMonero(1);\">Plant 1 Monero</button>");
+                htmlInteraction.setInnerHtml("Monero_buttons", "<button class=\"home_button\" id=\"plant_1_Monero\" onClick=\"farm.plantMonero(1);\">Plant 1 Monero</button>");
             break;
             case 2:
-                htmlInteraction.setInnerHtml("lp_buttons", "Plant <button class=\"home_button\" id=\"plant_1_lp\" onClick=\"farm.plantMonero(1);\">1</button><button class=\"home_button\" id=\"plant_10_lp\" onClick=\"farm.plantMonero(10);\" style=\"visibility:hidden\">10</button> lp");
+                htmlInteraction.setInnerHtml("Monero_buttons", "Plant <button class=\"home_button\" id=\"plant_1_Monero\" onClick=\"farm.plantMonero(1);\">1</button><button class=\"home_button\" id=\"plant_10_Monero\" onClick=\"farm.plantMonero(10);\" style=\"visibility:hidden\">10</button> Monero");
             break;
             case 3:
-                htmlInteraction.setInnerHtml("lp_buttons", "Plant <button class=\"home_button\" id=\"plant_1_lp\" onClick=\"farm.plantMonero(1);\">1</button><button class=\"home_button\" id=\"plant_10_lp\" onClick=\"farm.plantMonero(10);\" style=\"visibility:hidden\">10</button><button class=\"home_button\" id=\"plant_100_lp\" onClick=\"farm.plantMonero(100);\" style=\"visibility:hidden\">100</button> lp");
+                htmlInteraction.setInnerHtml("Monero_buttons", "Plant <button class=\"home_button\" id=\"plant_1_Monero\" onClick=\"farm.plantMonero(1);\">1</button><button class=\"home_button\" id=\"plant_10_Monero\" onClick=\"farm.plantMonero(10);\" style=\"visibility:hidden\">10</button><button class=\"home_button\" id=\"plant_100_Monero\" onClick=\"farm.plantMonero(100);\" style=\"visibility:hidden\">100</button> Monero");
             break;
             case 4:
-                htmlInteraction.setInnerHtml("lp_buttons", "Plant <button class=\"home_button\" id=\"plant_1_lp\" onClick=\"farm.plantMonero(1);\">1</button><button class=\"home_button\" id=\"plant_10_lp\" onClick=\"farm.plantMonero(10);\" style=\"visibility:hidden\">10</button><button class=\"home_button\" id=\"plant_100_lp\" onClick=\"farm.plantMonero(100);\" style=\"visibility:hidden\">100</button><button class=\"home_button\" id=\"plant_1000_lp\" onClick=\"farm.plantMonero(1000);\" style=\"visibility:hidden\">1000</button> lp");
+                htmlInteraction.setInnerHtml("Monero_buttons", "Plant <button class=\"home_button\" id=\"plant_1_Monero\" onClick=\"farm.plantMonero(1);\">1</button><button class=\"home_button\" id=\"plant_10_Monero\" onClick=\"farm.plantMonero(10);\" style=\"visibility:hidden\">10</button><button class=\"home_button\" id=\"plant_100_Monero\" onClick=\"farm.plantMonero(100);\" style=\"visibility:hidden\">100</button><button class=\"home_button\" id=\"plant_1000_Monero\" onClick=\"farm.plantMonero(1000);\" style=\"visibility:hidden\">1000</button> Monero");
             break;
         }
         
@@ -78,7 +78,7 @@ var farm = {
         this.MoneroPlanted = value;
         
         // We update on page
-        htmlInteraction.setInnerHtml("lp_planted", "Lp planted : " + this.MoneroPlanted);
+        htmlInteraction.setInnerHtml("Monero_planted", "Monero planted : " + this.MoneroPlanted);
         
         // We re calculate stuff
         this.calculateMoneroPerDay();
@@ -110,7 +110,7 @@ var farm = {
     
     setMoneroProduction : function(value){
         this.MoneroProduction = value;
-        htmlInteraction.setInnerHtml("lp_production", "Production : " + this.MoneroProduction + " lp/" + this.productionDelayType);
+        htmlInteraction.setInnerHtml("Monero_production", "Production : " + this.MoneroProduction + " Monero/" + this.productionDelayType);
     },
     
     setMaxMoneroPerDay : function(value){

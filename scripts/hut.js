@@ -17,7 +17,7 @@ var hut = {
     
     acceptProposition : function(){
         this.setStep(2);
-        this.setSpeech("See by yourself. My prices are high, but the spells are great! (1 klp means 1000 Monero)");
+        this.setSpeech("See by yourself. My prices are high, but the spells are great! (1 kMonero means 1000 Monero)");
         this.updateOnPage();
     },
     
@@ -90,13 +90,13 @@ var hut = {
         var text = "\n";
         
         for(var i = 0; i < spells.list.length; i++){
-            text += "\n<button id=\"hut_spell_" + i + "\" onClick=\"hut.useSpell(" + i + ");\">" + spells.list[i].name + " (" + spells.list[i].price()/1000 + " klp)</button>";
+            text += "\n<button id=\"hut_spell_" + i + "\" onClick=\"hut.useSpell(" + i + ");\">" + spells.list[i].name + " (" + spells.list[i].price()/1000 + " kMonero)</button>";
         }
         
         // We maybe add the surpass yourself button
         if(quest.maxLandOrder == 7 && yourself.canSurpass == false){
             text += "\n";
-            text += "\n<button id=\"hut_surpass\" onClick=\"hut.surpass();\">Surpass yourself (" + 1000 + " klp)</button>";
+            text += "\n<button id=\"hut_surpass\" onClick=\"hut.surpass();\">Surpass yourself (" + 1000 + " kMonero)</button>";
         }
         
         return text;

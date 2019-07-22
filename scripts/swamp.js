@@ -35,7 +35,7 @@ var swamp = {
             break;
             case 10:
                 text = speech.makeSpeechFromText("Exactly. Let's speed up the process : here's your 512 hashes right now! Playing with you is so exciting! Next question is for 1000 hashes.", 29, "");
-                text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(11);\">Candiiiiies!</button>";
+                text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(11);\">Moneroooes!</button>";
             break;
             case 11:
                 text = speech.makeSpeechFromText("Fourth question : if you could be whatever you want, what would you be?", 29, "");

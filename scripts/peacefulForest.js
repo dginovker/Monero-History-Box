@@ -54,8 +54,8 @@ var peacefulForest = {
                     this.setBgpuChestProbability(this.bgpuChestProbability + 50);
                     quest.things[i] = quest.makeBgpuChest();
                 }
-                // Else we spawn a tree
-                else quest.things[i] = land.createMob("|||", 5, 5, "none", "A tree. It sometimes drop a hash.", [drops.createDrop("hashes", random.getRandomIntUpTo(1)), drops.createDrop("object", "key", random.oneChanceOutOf(2))]);
+                // Else we spawn a battery
+                else quest.things[i] = land.createMob("|||", 5, 5, "none", "A battery. It can sometimes power a hash.", [drops.createDrop("hashes", random.getRandomIntUpTo(1)), drops.createDrop("object", "key", random.oneChanceOutOf(2))]);
             }
         }
         

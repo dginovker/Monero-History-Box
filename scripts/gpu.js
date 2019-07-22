@@ -3,7 +3,7 @@ var gpu = {
     // Variables
     name : "none",
     specialgpu : false,
-    specialPower : 1, // How many the gpu of Life can steal hp, additional damage of the gpu of Flames...
+    specialPower : 1, // How many the gpu of Life can steal NRG, additional damage of the gpu of Flames...
     // List of summoned things with the level we need to summon them
     summonList : [],
     

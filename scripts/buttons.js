@@ -222,7 +222,7 @@ var buttons = {
                     shop.setBuy10MoneroButtonShown(true);
                     if(htmlInteraction.isElementVisible("buy_10_Monero") == false){ // If it wasn't shown yet
                         htmlInteraction.showButton("buy_10_Monero");
-                        shop.setMerchantSpeech("There's now a discount for 10 Monero! Buy them please.. I need candiiiies!");
+                        shop.setMerchantSpeech("There's now a discount for 10 Monero! Buy them please.. I need Moneroies!");
                     }
                     this.enableButton("buy_10_Monero");
                 }
@@ -273,7 +273,7 @@ var buttons = {
     checkMoneroPlantingButtons : function(){
         // If we have the key of the Monero farm
         if(objects.list.key.have){
-            // innerHtml of the lp_buttons span
+            // innerHtml of the Monero_buttons span
             
             // Plant 1000 button
             if(Monero.nbrOwned >= 1000 && farm.plantingButtonsStep < 4){
@@ -296,35 +296,35 @@ var buttons = {
             
             // Plant 1000 button
             if(farm.plantingButtonsStep >= 4){
-                htmlInteraction.showButton("plant_1000_lp");
+                htmlInteraction.showButton("plant_1000_Monero");
                 if(Monero.nbrOwned >= 1000){
-                    this.enableButton("plant_1000_lp");
+                    this.enableButton("plant_1000_Monero");
                 }
-                else htmlInteraction.disableButton("plant_1000_lp");
+                else htmlInteraction.disableButton("plant_1000_Monero");
             }
             // Plant 100 button
             if(farm.plantingButtonsStep >= 3){
-                htmlInteraction.showButton("plant_100_lp");
+                htmlInteraction.showButton("plant_100_Monero");
                 if(Monero.nbrOwned >= 100){
-                    this.enableButton("plant_100_lp");
+                    this.enableButton("plant_100_Monero");
                 }
-                else htmlInteraction.disableButton("plant_100_lp");
+                else htmlInteraction.disableButton("plant_100_Monero");
             }
             // Plant 10 button
             if(farm.plantingButtonsStep >= 2){
-                htmlInteraction.showButton("plant_10_lp");
+                htmlInteraction.showButton("plant_10_Monero");
                 if(Monero.nbrOwned >= 10){
-                    this.enableButton("plant_10_lp");
+                    this.enableButton("plant_10_Monero");
                 }
-                else htmlInteraction.disableButton("plant_10_lp");
+                else htmlInteraction.disableButton("plant_10_Monero");
             }
             // Plant 1 button
             if(farm.plantingButtonsStep >= 1){
-                htmlInteraction.showButton("plant_1_lp");
+                htmlInteraction.showButton("plant_1_Monero");
                 if(Monero.nbrOwned >= 1){
-                    this.enableButton("plant_1_lp");
+                    this.enableButton("plant_1_Monero");
                 }
-                else htmlInteraction.disableButton("plant_1_lp");
+                else htmlInteraction.disableButton("plant_1_Monero");
             }
         }
     },

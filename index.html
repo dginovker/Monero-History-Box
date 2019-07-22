@@ -10,7 +10,7 @@
 		<meta name="title" content="Monero Box">
 		<meta name="keywords" content="Monero,Box,Monerobox,hashbox,game,ascii,save">
 		<meta name="author" content="aniwey">
-		<meta name="description" content="hash Box is a role-playing browser video game featuring ASCII art. It was developed by indie game developer aniwey, and reskinned by dginovker.">
+		<meta name="description" content="Mining Rig is a role-playing browser video game featuring ASCII art. It was developed by indie game developer aniwey, and reskinned by dginovker.">
 		<meta http-equiv="Cache-control" content="no-cache">
         <link rel="shortcut icon" href="./favicon.ico"/> <!-- Favicon by HacksawUnit \o/ Thanks to him ! -->
         
@@ -104,7 +104,7 @@
         
         <div id="tabBar" style="display:none">
             <ul id="tabs">
-                <li><button class="tab-0" tab="tab_hash_box">hash box</button></li>
+                <li><button class="tab-0" tab="tab_hash_box">Mining Rig</button></li>
                 <li><button class="tab-1" tab="tab_inventory">Inventory</button></li>
                 <li><button class="tab-2" tab="tab_quest">Quest</button></li>
                 <li><button class="tab-3" tab="tab_cauldron">Cauldron</button></li>
@@ -113,7 +113,7 @@
         </div>
         
         <!-- *************** -->
-        <!-- TAB : hash BOX -->
+        <!-- TAB : Mining Rig -->
         <!-- *************** -->
         
         <div id="tab_hash_box">
@@ -139,9 +139,9 @@
         
 </pre>
         
-                        <span id="lp_planted"></span><br/>
-                        <span id="lp_production"></span><br/>
-                        <span id="lp_buttons"></span><br/><br/>
+                        <span id="Monero_planted"></span><br/>
+                        <span id="Monero_production"></span><br/>
+                        <span id="Monero_buttons"></span><br/><br/>
         
                     </span>
                 
@@ -197,7 +197,7 @@
  \  /|##| o  |.|    /
   \/ \::|/\_ /  ---'|
   
-   The hash merchant
+   The Pool Operator
     
 <span id="merchant_speech"></span>
 </pre>
@@ -237,7 +237,7 @@
         
             </div> <!-- Close the left panel -->
             <br class="clear"/>
-        </div> <!-- Close the hash box tab -->
+        </div> <!-- Close the Mining Rig tab -->
         
     <!-- *************** -->
         <!-- TAB : INVENTORY -->
@@ -347,13 +347,13 @@
             You are inside the developper's computer !<br/>
             This computer is able to affect the game in the strangest ways...<br/>
             But, as usual, it's not free : you need Monero to fully access the computer and execute bugs.<br/>
-            (1 mlp means 1 000 000 Monero)<br/><br/>
-            <span style="font-size:14px;">You currently have <b><span id="computer_Monero"></span> mlp</b>.</span><br/><br/>
-            <button id="computer_bug_1" onclick="computer.bug1();" style="visibility:hidden">Make a level 1 bug (1 mlp)</button> <span id="computer_comment_1"></span><br/>
-            <button id="computer_bug_2" onclick="computer.bug2();" style="visibility:hidden">Make a level 2 bug (10 mlp)</button> <span id="computer_comment_2"></span><br/>
-            <button id="computer_bug_3" onclick="computer.bug3();" style="visibility:hidden">Make a level 3 bug (100 mlp)</button> <span id="computer_comment_3"></span><br/>
-            <button id="computer_bug_4" onclick="computer.bug4();" style="visibility:hidden">Make a level 4 bug (1000 mlp)</button> <span id="computer_comment_4"></span><br/>
-            <button id="computer_bug_5" onclick="computer.bug5();" style="visibility:hidden">Make a level 5 bug (10000 mlp)</button> <span id="computer_comment_5"></span><br/>
+            (1 mMonero means 1 000 000 Monero)<br/><br/>
+            <span style="font-size:14px;">You currently have <b><span id="computer_Monero"></span> mMonero</b>.</span><br/><br/>
+            <button id="computer_bug_1" onclick="computer.bug1();" style="visibility:hidden">Make a level 1 bug (1 mMonero)</button> <span id="computer_comment_1"></span><br/>
+            <button id="computer_bug_2" onclick="computer.bug2();" style="visibility:hidden">Make a level 2 bug (10 mMonero)</button> <span id="computer_comment_2"></span><br/>
+            <button id="computer_bug_3" onclick="computer.bug3();" style="visibility:hidden">Make a level 3 bug (100 mMonero)</button> <span id="computer_comment_3"></span><br/>
+            <button id="computer_bug_4" onclick="computer.bug4();" style="visibility:hidden">Make a level 4 bug (1000 mMonero)</button> <span id="computer_comment_4"></span><br/>
+            <button id="computer_bug_5" onclick="computer.bug5();" style="visibility:hidden">Make a level 5 bug (10000 mMonero)</button> <span id="computer_comment_5"></span><br/>
             <span id="computer_bug_6" style="visibility:hidden">No level 6 bug, sorry :( (maybe level 7 ?)</span><br/>
             <span id="computer_bug_7" style="visibility:hidden">Crap, no level 7 bug either :s Don't give up !</span><br/>
             <br/>

@@ -60,9 +60,9 @@ var quest = {
         
         // We add the character
         if(land.ponyTime == false)
-            this.things[0] = {type:"character", text:"\\o/", max_hp:this.getCharacterMaxHp(), hp:this.getCharacterMaxHp(), weapon:(gpu.name), description:"You"};
+            this.things[0] = {type:"character", text:"\\o/", max_NRG:this.getCharacterMaxNRG(), NRG:this.getCharacterMaxNRG(), weapon:(gpu.name), description:"You"};
         else
-            this.things[0] = {type:"character", text:"PON", max_hp:this.getCharacterMaxHp(), hp:this.getCharacterMaxHp(), weapon:(gpu.name), description:"You"};
+            this.things[0] = {type:"character", text:"PON", max_NRG:this.getCharacterMaxNRG(), NRG:this.getCharacterMaxNRG(), weapon:(gpu.name), description:"You"};
         
         // We set the speed
         this.speed = this.getSpeed();
@@ -124,8 +124,8 @@ var quest = {
         htmlInteraction.setInnerHtml("quest", text);
     },
     
-    getCharacterMaxHp : function(){
-        return 100 + Math.floor(Math.pow(hashes.nbrEaten, 0.4)*2.1); // This function means ~ one day of hashes eaten at 1cnd/s = +200 hp
+    getCharacterMaxNRG : function(){
+        return 100 + Math.floor(Math.pow(hashes.nbrEaten, 0.4)*2.1); // This function means ~ one day of hashes eaten at 1cnd/s = +200 NRG
     },
     
     getSpeed : function(){
@@ -255,15 +255,15 @@ var quest = {
         var index = this.getCharacterIndex();
         
         // If we're not dead
-        if(this.things[index].hp > 0){
-            this.things[index].hp += 3;
-            if(this.things[index].hp > this.things[index].max_hp) this.things[index].hp = this.things[index].max_hp;
+        if(this.things[index].NRG > 0){
+            this.things[index].NRG += 3;
+            if(this.things[index].NRG > this.things[index].max_NRG) this.things[index].NRG = this.things[index].max_NRG;
         }
     },
     
     fight : function(index1, index2){
-        // We launch a fight between us and the mob if the mob still have some hp (he may lose its hp because of a scroll)
-        if(this.things[index2].hp > 0) damage.makeTwoQuestThingsFighting(index1, index2);
+        // We launch a fight between us and the mob if the mob still have some NRG (he may lose its NRG because of a scroll)
+        if(this.things[index2].NRG > 0) damage.makeTwoQuestThingsFighting(index1, index2);
         
         // Check for deads
         if(this.checkIfDead(index1, index2) == true) return true;
@@ -274,7 +274,7 @@ var quest = {
     
     checkIfDead : function(index, indexKiller){
         // If we're dead
-        if(this.things[index].hp <= 0){
+        if(this.things[index].NRG <= 0){
             // If we're the character
             if(this.things[index].type == "character"){
                 this.updateOnPage(); // We update on page
@@ -300,8 +300,8 @@ var quest = {
                     }
                     // gpu of Life : we gain life
                     if(gpu.name == "gpu of Life" || gpu.name == "gpu of Liflamesummoning"){
-                        this.things[indexKiller].hp += gpu.specialPower + 1;
-                        if(this.things[indexKiller].hp > this.things[indexKiller].max_hp) this.things[indexKiller].hp = this.things[indexKiller].max_hp;
+                        this.things[indexKiller].NRG += gpu.specialPower + 1;
+                        if(this.things[indexKiller].NRG > this.things[indexKiller].max_NRG) this.things[indexKiller].NRG = this.things[indexKiller].max_NRG;
                     }
                 }
             }
@@ -388,7 +388,7 @@ var quest = {
         potions.updateOnPage();
         
         // We're tired after this quest
-        if(this.things[index].hp < this.things[index].max_hp) this.setTiredFound(this.tiredFound + 200 * (1 - (this.things[index].hp / this.things[index].max_hp)));
+        if(this.things[index].NRG < this.things[index].max_NRG) this.setTiredFound(this.tiredFound + 200 * (1 - (this.things[index].NRG / this.things[index].max_NRG)));
         if(this.escaping == false) this.setTiredTime(Math.floor(this.tiredFound));
         
         // Nothing found anymore
@@ -432,8 +432,8 @@ var quest = {
     },
     
     makeImp : function(){
-        var hp = 15 + random.getRandomIntUpTo(10);
-        return land.createAlly("IMP", hp, hp, "its whole body", "An imp.", []);
+        var NRG = 15 + random.getRandomIntUpTo(10);
+        return land.createAlly("IMP", NRG, NRG, "its whole body", "An imp.", []);
     },
     
     makeOrc : function(){
@@ -453,14 +453,14 @@ var quest = {
     },
     
     makeChimera : function(){
-        var hp = 50 + random.getRandomIntUpTo(7);
-        return land.createAlly("CHI", hp, hp, "fire", "A chimera : lion, serpent and goat at the same time.", []);
+        var NRG = 50 + random.getRandomIntUpTo(7);
+        return land.createAlly("CHI", NRG, NRG, "fire", "A chimera : lion, serpent and goat at the same time.", []);
     },
     
     makehashMonster : function(){
-        var hp = 80 + 5*gpu.specialPower;
+        var NRG = 80 + 5*gpu.specialPower;
         
-        return land.createAlly("CND", hp, hp, "exploding hashes", "A hash monster. He throws hashes on his ennemies.", []);
+        return land.createAlly("CND", NRG, NRG, "exploding hashes", "A hash monster. He throws hashes on his ennemies.", []);
     },
     
     makeFakeCharacter : function(){

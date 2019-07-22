@@ -109,35 +109,35 @@ var cauldron = {
                 break;
                 case 1:
                     this.textLeftPage = this.asciiThirdPage;
-                    this.textRightPage = this.asciiFourthPage;
+                    this.textRightPage = this.asciiFourtNRGage;
                 break;
                 case 2:
-                    this.textLeftPage = this.asciiFifthPage;
-                    this.textRightPage = this.asciiSixthPage;
+                    this.textLeftPage = this.asciiFiftNRGage;
+                    this.textRightPage = this.asciiSixtNRGage;
                 break;
                 case 3:
-                    this.textLeftPage = this.asciiSeventhPage;
-                    this.textRightPage = this.asciiEighthPage;
+                    this.textLeftPage = this.asciiSeventNRGage;
+                    this.textRightPage = this.asciiEightNRGage;
                 break;
                 case 4:
-                    this.textLeftPage = this.asciiNinthPage;
-                    this.textRightPage = this.asciiTenthPage;
+                    this.textLeftPage = this.asciiNintNRGage;
+                    this.textRightPage = this.asciiTentNRGage;
                 break;
                 case 5:
-                    this.textLeftPage = this.asciiMinorHealthPotionP1;
-                    this.textRightPage = this.asciiMinorHealthPotionP2;
+                    this.textLeftPage = this.asciiMinorHealtNRGotionP1;
+                    this.textRightPage = this.asciiMinorHealtNRGotionP2;
                 break;
                 case 6:
-                    this.textLeftPage = this.asciiMinorHealthPotionP3;
-                    this.textRightPage = this.asciiMinorHealthPotionP4;
+                    this.textLeftPage = this.asciiMinorHealtNRGotionP3;
+                    this.textRightPage = this.asciiMinorHealtNRGotionP4;
                 break;
                 case 7:
-                    this.textLeftPage = this.asciiMajorHealthPotionP1;
-                    this.textRightPage = this.asciiMajorHealthPotionP2;
+                    this.textLeftPage = this.asciiMajorHealtNRGotionP1;
+                    this.textRightPage = this.asciiMajorHealtNRGotionP2;
                 break;
                 case 8:
-                    this.textLeftPage = this.asciiMajorHealthPotionP3;
-                    this.textRightPage = this.asciiMajorHealthPotionP4;
+                    this.textLeftPage = this.asciiMajorHealtNRGotionP3;
+                    this.textRightPage = this.asciiMajorHealtNRGotionP4;
                 break;
                 case 9:
                     this.textLeftPage = this.asciiInvulnerabilityPotionP1;
@@ -172,12 +172,12 @@ var cauldron = {
                     this.textRightPage = this.asciiCloningPotionP6;
                 break;
                 case 17:
-                    this.textLeftPage = this.asciiGMOOHPotionP1;
-                    this.textRightPage = this.asciiGMOOHPotionP2;
+                    this.textLeftPage = this.asciiGMOONRGotionP1;
+                    this.textRightPage = this.asciiGMOONRGotionP2;
                 break;
                 case 18:
-                    this.textLeftPage = this.asciiGMOOHPotionP3;
-                    this.textRightPage = this.asciiGMOOHPotionP4;
+                    this.textLeftPage = this.asciiGMOONRGotionP3;
+                    this.textRightPage = this.asciiGMOONRGotionP4;
                 break;
                 case 19:
                     this.textLeftPage = this.asciiSupermanPotionP1;
@@ -809,7 +809,7 @@ var cauldron = {
 "prepare it."
 ],
 
-    asciiFourthPage :
+    asciiFourtNRGage :
 [
 "2. You can do",
 "several potions",
@@ -823,7 +823,7 @@ var cauldron = {
 "in one go."
 ],
 
-    asciiFifthPage :
+    asciiFiftNRGage :
 [
 "Table of contents",
 "-----------------",
@@ -836,7 +836,7 @@ var cauldron = {
 "potion"
 ],
 
-    asciiSixthPage :
+    asciiSixtNRGage :
 [
 "",
 " 14-17",
@@ -848,7 +848,7 @@ var cauldron = {
 "potion"
 ],
 
-    asciiSeventhPage :
+    asciiSeventNRGage :
 [
 "Table of contents",
 "-----------------",
@@ -860,7 +860,7 @@ var cauldron = {
 "Turtle potion"
 ],
 
-    asciiEighthPage :
+    asciiEightNRGage :
 [
 " 28-33",
 "Cloning potion",
@@ -873,7 +873,7 @@ var cauldron = {
 "Superman potion",
 ],
 
-    asciiNinthPage :
+    asciiNintNRGage :
 [
 "Table of contents",
 "-----------------",
@@ -885,7 +885,7 @@ var cauldron = {
 "-----------------"
 ],
 
-    asciiTenthPage :
+    asciiTentNRGage :
 [
 "",
 "",
@@ -897,7 +897,7 @@ var cauldron = {
 "Magical jelly",
 ],
 
-    asciiMinorHealthPotionP1 :
+    asciiMinorHealtNRGotionP1 :
 [
 "Minor health pot.",
 "-----------------",
@@ -911,7 +911,7 @@ var cauldron = {
 "make you recover"
 ],
 
-    asciiMinorHealthPotionP2 :
+    asciiMinorHealtNRGotionP2 :
 [
 "50 health points.",
 "",
@@ -925,7 +925,7 @@ var cauldron = {
 "seconds."
 ],
 
-    asciiMinorHealthPotionP3 :
+    asciiMinorHealtNRGotionP3 :
 [
 "You can mix a",
 "little more or",
@@ -939,7 +939,7 @@ var cauldron = {
 "bottles."
 ],
 
-    asciiMinorHealthPotionP4 :
+    asciiMinorHealtNRGotionP4 :
 [
 "Congratulations !",
 "You just made",
@@ -953,7 +953,7 @@ var cauldron = {
 "3, etc."
 ],
 
-    asciiMajorHealthPotionP1 :
+    asciiMajorHealtNRGotionP1 :
 [
 "Major health pot.",
 "-----------------",
@@ -967,7 +967,7 @@ var cauldron = {
 "a lot more",
 ],
 
-    asciiMajorHealthPotionP2 :
+    asciiMajorHealtNRGotionP2 :
 [
 "efficient : by",
 "drinking it",
@@ -981,7 +981,7 @@ var cauldron = {
 "potion :"
 ],
 
-    asciiMajorHealthPotionP3 :
+    asciiMajorHealtNRGotionP3 :
 [
 "1. Put 100",
 "Monero into",
@@ -995,7 +995,7 @@ var cauldron = {
 "hashes into the",
 ],
 
-    asciiMajorHealthPotionP4 :
+    asciiMajorHealtNRGotionP4 :
 [
 "cauldron.",
 "",
@@ -1203,7 +1203,7 @@ var cauldron = {
 "    of life\""
 ],
 
-    asciiGMOOHPotionP1 :
+    asciiGMOONRGotionP1 :
 [
 "G.M.O.O.H. potion",
 "-----------------",
@@ -1217,7 +1217,7 @@ var cauldron = {
 "situations."
 ],
 
-    asciiGMOOHPotionP2 :
+    asciiGMOONRGotionP2 :
 [
 "It will teleport",
 "you to another",
@@ -1231,7 +1231,7 @@ var cauldron = {
 "isn't it ?"
 ],
 
-    asciiGMOOHPotionP3 :
+    asciiGMOONRGotionP3 :
 [
 "First, put in",
 "your cauldron a",
@@ -1244,7 +1244,7 @@ var cauldron = {
 "want to brew."
 ],
 
-    asciiGMOOHPotionP4 :
+    asciiGMOONRGotionP4 :
 [
 "Never change the",
 "base quantity of",
@@ -1319,7 +1319,7 @@ var cauldron = {
 "-----------------",
 "According to an",
 "ancient legend,",
-"trees would be",
+"batterys would be",
 "the source of all",
 "hashes in the",
 "whole world.",
@@ -1331,10 +1331,10 @@ var cauldron = {
 [
 "somewhere in the",
 "universe a giant",
-"tree, which",
+"battery, which",
 "remains unnamed.",
 "",
-"This tree would",
+"This battery would",
 "provide its",
 "discoverer an",
 "infinite flow of",
@@ -1350,7 +1350,7 @@ var cauldron = {
 "craft a magical",
 "seed so that it",
 "grows a resistant",
-"tree. And this",
+"battery. And this",
 "can be useful",
 "during a quest."
 ],
@@ -1366,7 +1366,7 @@ var cauldron = {
 "a bottle.",
 "",
 "Now, plant some",
-"trees !"
+"batterys !"
 ],
 
     asciiJellyP1 :

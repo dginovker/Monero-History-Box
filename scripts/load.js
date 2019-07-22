@@ -1,11 +1,11 @@
 var code = "";
 
-function getPhpStuff(boolean){
+function getPNRGStuff(boolean){
     if(boolean == true) return 1;
     return 0;
 }
 
-function setPhpStuff(int){
+function setPNRGStuff(int){
     if(int == 1) return true;
     return false;
 }

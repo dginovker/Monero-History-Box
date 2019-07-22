@@ -28,7 +28,7 @@ var developperComputer = {
         
         if(quest.weAreQuestingRightNow && land.getLandIndexFromName("Developper's computer") == quest.currentLandIndex){
             if(quest.things[this.size-1].text == "DEV" && index == this.size-2){
-                quest.things[this.size-1].hp = 0;
+                quest.things[this.size-1].NRG = 0;
             }
         }
     },

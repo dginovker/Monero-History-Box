@@ -2,7 +2,7 @@ var objects = {
 
     // Variables
     list : {
-        key : {have:false, found:false, text:"a key", name:"The Monero farm's key.", description:"This key brings a Monero farm to your hash box."},
+        key : {have:false, found:false, text:"a key", name:"The Monero farm's key.", description:"This key brings a Monero farm to your Mining Rig."},
         boots : {have:false, found:false, text:"a pair of boots", name:"The seven-league boots.", description:"These boots increase your speed during quests."},
         swampMap : {have:false, found:false, text:"a map", name:"The map to the Swampy Swamp.", description:"The Swampy Swamp is the swampiest swamp you've ever seen."},
         hutMap : {have:false, found:false, text:"a map", name:"The map to the sorceress' hut.", description:"In this hut lives a powerful witch ! She might help you... but not for free."},
@@ -10,7 +10,7 @@ var objects = {
         magicianHat : {have:false, found:false, text:"a hat", name:"The magician's hat.", description:"Wearing this hat enhances your magic."},
         pinkRing : {have:false, found:false, text:"a ring", name:"The pink ring of calmness.", description:"This pink ring will help you control your breath. You will recover faster after a quest."},
         forgeMap : {have:false, found:false, text:"a map", name:"The map to the forge.", description:"An anvil can be really useful, if you have the appropriate gpu.."},
-        hashesConverter : {have:false, found:false, text:"a strange object", name:"The hashes converter.", description:"When activated in your hash box, this surprising object quickly converts all your hashes into Monero. One hash gives one Monero !"},
+        hashesConverter : {have:false, found:false, text:"a strange object", name:"The hashes converter.", description:"When activated in your Mining Rig, this surprising object quickly converts all your hashes into Monero. One hash gives one Monero !"},
         plateArmour : {have:false, found:false, text:"a strong armour", name:"A plate armour.", description:"This strong armour protects you from your enemies. You will lose less health points."},
         cauldron : {have:false, found:false, text:"a big container", name:"A cauldron.", description:"This cauldron allows you to brew a large variety of potions, using raw, common materials like hashes or Monero."},
         magicalHorn : {have:false, found:false, text:"a horn", name:"A magical horn.", description:"This magical horn belonged to a unicorn. Carrying it will make you regain health points continuously during a quest !"},

@@ -5,28 +5,28 @@ var land = {
     ponyTime : false,
     
     // Functions
-    createMob : function(text, max_hp, hp, weapon, description, drops){
+    createMob : function(text, max_NRG, NRG, weapon, description, drops){
         if(this.ponyTime == false)
-            return {type:"mob", text:text, max_hp:max_hp, hp:hp, weapon:weapon, description:description, drops:drops};
-        else return {type:"mob", text:"PON", max_hp:max_hp, hp:hp, weapon:weapon, description:"A pony", drops:drops};
+            return {type:"mob", text:text, max_NRG:max_NRG, NRG:NRG, weapon:weapon, description:description, drops:drops};
+        else return {type:"mob", text:"PON", max_NRG:max_NRG, NRG:NRG, weapon:weapon, description:"A pony", drops:drops};
     },
     
     createFakeCharacter : function(){
         if(this.ponyTime == false)
-            return {type:"fake", text:"\\o/", max_hp:0, hp:0, weapon:"none", description:"", drops:[]};
-        else return {type:"fake", text:"PON", max_hp:0, hp:0, weapon:"none", description:"A pony", drops:[]};
+            return {type:"fake", text:"\\o/", max_NRG:0, NRG:0, weapon:"none", description:"", drops:[]};
+        else return {type:"fake", text:"PON", max_NRG:0, NRG:0, weapon:"none", description:"A pony", drops:[]};
     },
     
-    createAlly : function(text, max_hp, hp, weapon, description, drops){
+    createAlly : function(text, max_NRG, NRG, weapon, description, drops){
         if(this.ponyTime == false)
-            return {type:"ally", text:text, max_hp:max_hp, hp:hp, weapon:weapon, description:description, drops:drops};
-        else return {type:"ally", text:"PON", max_hp:max_hp, hp:hp, weapon:weapon, description:"A pony", drops:drops};
+            return {type:"ally", text:text, max_NRG:max_NRG, NRG:NRG, weapon:weapon, description:description, drops:drops};
+        else return {type:"ally", text:"PON", max_NRG:max_NRG, NRG:NRG, weapon:weapon, description:"A pony", drops:drops};
     },
     
-    createTrap : function(text, max_hp, hp, weapon, description, drops){
+    createTrap : function(text, max_NRG, NRG, weapon, description, drops){
         if(this.ponyTime == false)
-            return {type:"trap", text:text, max_hp:max_hp, hp:hp, weapon:weapon, description:description, drops:drops};
-        else return {type:"trap", text:"PON", max_hp:max_hp, hp:hp, weapon:weapon, description:"A pony", drops:drops};
+            return {type:"trap", text:text, max_NRG:max_NRG, NRG:NRG, weapon:weapon, description:description, drops:drops};
+        else return {type:"trap", text:"PON", max_NRG:max_NRG, NRG:NRG, weapon:weapon, description:"A pony", drops:drops};
     },
     
     addLand : function(name, size, order, loadFunction, getTextFunction, moveFunction){
