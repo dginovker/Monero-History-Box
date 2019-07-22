@@ -15,10 +15,10 @@ var developperGarden = {
         for(var i = 0; i < this.size; i++){
             if(quest.things[i].text == "CGG"){
                 if(targetIndex != -1){ // If we have a target
-                    quest.things[targetIndex].hp -= 30;
-                    if(quest.things[targetIndex].hp <= 0){
+                    quest.things[targetIndex].NRG -= 30;
+                    if(quest.things[targetIndex].NRG <= 0){
                         if(quest.things[targetIndex].type != "character") quest.things[targetIndex] = quest.makeNoneThing();
-                        else quest.things[targetIndex].hp = 1;
+                        else quest.things[targetIndex].NRG = 1;
                         targetIndex = -1;
                     }
                 }

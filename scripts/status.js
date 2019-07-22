@@ -57,7 +57,7 @@ var status2 = {
     getLinesFromThingIndex : function(i){
         var lines = [];
         lines.push("  " + quest.things[i].text);
-        lines.push("HP : " + quest.things[i].hp + "/" + quest.things[i].max_hp);
+        lines.push("NRG : " + quest.things[i].NRG + "/" + quest.things[i].max_NRG);
         lines.push("Weapon : " + quest.things[i].weapon);
         lines.push("\"" + quest.things[i].description + "\"");
         return lines;

@@ -122,13 +122,13 @@ var chuckNorris = {
 "Chuck Norris once punched a man in the soul.",
 "Chuck Norris can drown a fish.",
 "Leaving a criminal in the same room as Chuck Norris is cruel and unusual punishment.",
-"Chuck Norris can pick oranges from an apple tree and make the best lemonade youve ever tasted.",
+"Chuck Norris can pick oranges from an apple battery and make the best lemonade youve ever tasted.",
 "Once a cobra bit Chuck Norris' leg. After five days of excruciating pain, the cobra died.",
 "Chuck Norris doesn't play \"hide-and-seek.\" He plays \"hide-and-pray-I-don't-find-you.\"",
 "Chuck Norris beat the sun in a staring contest.",
 "Chuck Norris makes onions cry.",
 "Chuck Norris can divide by zero.",
-"Chuck Norris hears every tree that falls in the woods."
+"Chuck Norris hears every battery that falls in the woods."
 ]
     
 };

@@ -224,8 +224,8 @@ var hell = {
         var index = quest.getCharacterIndex();
         var character = quest.things[index];
 
-        // If we will be able to move on the "after" buffer, we swap (if we have some hp, too)
-        if(this.buffers[after][index].type == "none" && character.hp > 0){
+        // If we will be able to move on the "after" buffer, we swap (if we have some NRG, too)
+        if(this.buffers[after][index].type == "none" && character.NRG > 0){
             // We save the quest things in the old buffer
             this.buffers[now] = quest.things.slice(0);
             // We delete the character from the old buffer
@@ -257,7 +257,7 @@ var hell = {
     },
     
     makeDevil : function(){
-        return land.createMob("DEV", 250, 250, "religion", "It's the devil itself !", [drops.createDrop("candies", 100000)]);
+        return land.createMob("DEV", 250, 250, "religion", "It's the devil itself !", [drops.createDrop("hashes", 100000)]);
     },
     
     makeTeleportingGate : function(){

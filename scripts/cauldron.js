@@ -33,19 +33,19 @@ var cauldron = {
     bookLeftPagePosY : 3, // Y
     bookRightPagePosX : 29, // X right page
     bookRightPagePosY : 3, // Y
-    candiesInTheCauldron : 0, // Number of candies present in the cauldron
-    lollipopsInTheCauldron : 0, // Idem for lollipops
+    hashesInTheCauldron : 0, // Number of hashes present in the cauldron
+    MoneroInTheCauldron : 0, // Idem for Monero
     weAreMixing : false, // True if the player is mixing right now
     weAreBoiling : false, // True if the player is boiling right now
-    candiesWhenWeBeganAction : 0, // Number of candies in the cauldron when we began mixing
-    lollipopsWhenWeBeganAction : 0, // Idem lollipops
+    hashesWhenWeBeganAction : 0, // Number of hashes in the cauldron when we began mixing
+    MoneroWhenWeBeganAction : 0, // Idem Monero
     actionsList : [{type:"none"}, {type:"none"}, {type:"none"}], // List of actions
     actionTimer : 0, // Count the number of seconds an action lasts
     
     // Functions
-    registerAction : function(type, nbrCandies, nbrLollipops, timer){
+    registerAction : function(type, nbrhashes, nbrMonero, timer){
         // We add the action to the list
-        this.actionsList.push({type:type, nbrCandies:nbrCandies, nbrLollipops:nbrLollipops, timer:timer});
+        this.actionsList.push({type:type, nbrhashes:nbrhashes, nbrMonero:nbrMonero, timer:timer});
         
         // We delete one action if there's too much actions in the list
         if(this.actionsList.length > 3){
@@ -109,35 +109,35 @@ var cauldron = {
                 break;
                 case 1:
                     this.textLeftPage = this.asciiThirdPage;
-                    this.textRightPage = this.asciiFourthPage;
+                    this.textRightPage = this.asciiFourtNRGage;
                 break;
                 case 2:
-                    this.textLeftPage = this.asciiFifthPage;
-                    this.textRightPage = this.asciiSixthPage;
+                    this.textLeftPage = this.asciiFiftNRGage;
+                    this.textRightPage = this.asciiSixtNRGage;
                 break;
                 case 3:
-                    this.textLeftPage = this.asciiSeventhPage;
-                    this.textRightPage = this.asciiEighthPage;
+                    this.textLeftPage = this.asciiSeventNRGage;
+                    this.textRightPage = this.asciiEightNRGage;
                 break;
                 case 4:
-                    this.textLeftPage = this.asciiNinthPage;
-                    this.textRightPage = this.asciiTenthPage;
+                    this.textLeftPage = this.asciiNintNRGage;
+                    this.textRightPage = this.asciiTentNRGage;
                 break;
                 case 5:
-                    this.textLeftPage = this.asciiMinorHealthPotionP1;
-                    this.textRightPage = this.asciiMinorHealthPotionP2;
+                    this.textLeftPage = this.asciiMinorHealtNRGotionP1;
+                    this.textRightPage = this.asciiMinorHealtNRGotionP2;
                 break;
                 case 6:
-                    this.textLeftPage = this.asciiMinorHealthPotionP3;
-                    this.textRightPage = this.asciiMinorHealthPotionP4;
+                    this.textLeftPage = this.asciiMinorHealtNRGotionP3;
+                    this.textRightPage = this.asciiMinorHealtNRGotionP4;
                 break;
                 case 7:
-                    this.textLeftPage = this.asciiMajorHealthPotionP1;
-                    this.textRightPage = this.asciiMajorHealthPotionP2;
+                    this.textLeftPage = this.asciiMajorHealtNRGotionP1;
+                    this.textRightPage = this.asciiMajorHealtNRGotionP2;
                 break;
                 case 8:
-                    this.textLeftPage = this.asciiMajorHealthPotionP3;
-                    this.textRightPage = this.asciiMajorHealthPotionP4;
+                    this.textLeftPage = this.asciiMajorHealtNRGotionP3;
+                    this.textRightPage = this.asciiMajorHealtNRGotionP4;
                 break;
                 case 9:
                     this.textLeftPage = this.asciiInvulnerabilityPotionP1;
@@ -172,12 +172,12 @@ var cauldron = {
                     this.textRightPage = this.asciiCloningPotionP6;
                 break;
                 case 17:
-                    this.textLeftPage = this.asciiGMOOHPotionP1;
-                    this.textRightPage = this.asciiGMOOHPotionP2;
+                    this.textLeftPage = this.asciiGMOONRGotionP1;
+                    this.textRightPage = this.asciiGMOONRGotionP2;
                 break;
                 case 18:
-                    this.textLeftPage = this.asciiGMOOHPotionP3;
-                    this.textRightPage = this.asciiGMOOHPotionP4;
+                    this.textLeftPage = this.asciiGMOONRGotionP3;
+                    this.textRightPage = this.asciiGMOONRGotionP4;
                 break;
                 case 19:
                     this.textLeftPage = this.asciiSupermanPotionP1;
@@ -309,22 +309,22 @@ var cauldron = {
     drawActionsInfo : function(){
         this.textActionsInfo = "<br/><b>What you have :</b><br/>";
         
-        // Add candies and lollipops info
-        this.textActionsInfo += "    Candies :   " + candies.nbrOwned;
-        this.textActionsInfo += "<br/>    Lollipops : " + lollipops.nbrOwned;
+        // Add hashes and Monero info
+        this.textActionsInfo += "    hashes :   " + hashes.nbrOwned;
+        this.textActionsInfo += "<br/>    Monero : " + Monero.nbrOwned;
     },
     
     drawActionsPut : function(){
         this.textActionsPut = "<b>What you want to put in the cauldron :</b><br/><br/>"
-        this.textActionsPut += "<input id=\"cauldron_candies_quantity\" type=\"text\" size=\"10\"/> candies<br/>";
-        this.textActionsPut += "<input id=\"cauldron_lollipops_quantity\" type=\"text\" size=\"10\"/> lollipops<br/>";
+        this.textActionsPut += "<input id=\"cauldron_hashes_quantity\" type=\"text\" size=\"10\"/> hashes<br/>";
+        this.textActionsPut += "<input id=\"cauldron_Monero_quantity\" type=\"text\" size=\"10\"/> Monero<br/>";
         this.textActionsPut += "<button onclick=\"cauldron.putInTheCauldron()\">Put all that in the cauldron</button> <span id=\"cauldron_comment\"></span><br/>";
     },
     
     drawActionsInCauldron : function(){
         this.textActionsInCauldron += "<b>What is in the cauldron :</b><br/>";
-        this.textActionsInCauldron += "    Candies :   " + this.candiesInTheCauldron;
-        this.textActionsInCauldron += "<br/>    Lollipops : " + this.lollipopsInTheCauldron + "<br/>";
+        this.textActionsInCauldron += "    hashes :   " + this.hashesInTheCauldron;
+        this.textActionsInCauldron += "<br/>    Monero : " + this.MoneroInTheCauldron + "<br/>";
     },
     
     drawActions : function(){
@@ -347,7 +347,7 @@ var cauldron = {
         if(this.weAreMixing){
             if(this.actionTimer < 60){
                 // If we just began mixing or we're mixing something
-                if(this.actionTimer < 5 || (this.candiesInTheCauldron != 0 || this.lollipopsInTheCauldron != 0)){
+                if(this.actionTimer < 5 || (this.hashesInTheCauldron != 0 || this.MoneroInTheCauldron != 0)){
                     // We show the timer
                     htmlInteraction.setInnerHtml("cauldron_timer", this.actionTimer);
                 }
@@ -388,7 +388,7 @@ var cauldron = {
             // Then we stop
             this.weAreMixing = false;
             // We register the mixing
-            this.registerAction("mix", this.candiesWhenWeBeganAction, this.lollipopsWhenWeBeganAction, this.actionTimer);
+            this.registerAction("mix", this.hashesWhenWeBeganAction, this.MoneroWhenWeBeganAction, this.actionTimer);
         }
         // Else, if we want to begin mixing
         else if(value == true && this.weAreMixing == false){
@@ -400,8 +400,8 @@ var cauldron = {
             // We set the timer
             this.setActionTimer(0);
             // We store some info
-            this.candiesWhenWeBeganAction = this.candiesInTheCauldron;
-            this.lollipopsWhenWeBeganAction = this.lollipopsInTheCauldron;
+            this.hashesWhenWeBeganAction = this.hashesInTheCauldron;
+            this.MoneroWhenWeBeganAction = this.MoneroInTheCauldron;
         }
     },
     
@@ -411,7 +411,7 @@ var cauldron = {
             // Then we stop
             this.weAreBoiling = false;
             // We register the Boiling
-            this.registerAction("boil", this.candiesWhenWeBeganAction, this.lollipopsWhenWeBeganAction, this.actionTimer);
+            this.registerAction("boil", this.hashesWhenWeBeganAction, this.MoneroWhenWeBeganAction, this.actionTimer);
         }
         // Else, if we want to begin Boiling
         else if(value == true && this.weAreBoiling == false){
@@ -423,8 +423,8 @@ var cauldron = {
             // We set the timer
             this.setActionTimer(0);
             // We store some info
-            this.candiesWhenWeBeganAction = this.candiesInTheCauldron;
-            this.lollipopsWhenWeBeganAction = this.lollipopsInTheCauldron;
+            this.hashesWhenWeBeganAction = this.hashesInTheCauldron;
+            this.MoneroWhenWeBeganAction = this.MoneroInTheCauldron;
         }
     },
     
@@ -440,103 +440,103 @@ var cauldron = {
         
         // Check for minor health potion
         if(lastAc.type == "mix" // Last action was mixing
-        && lastAc.nbrLollipops == 0 // We mixed no lollipop
-        && lastAc.nbrCandies > 0 // We mixed at least one candy
-        && lastAc.nbrCandies % 100 == 0 // The candies we mixed were a multiple of 100
-        && lastAc.nbrCandies == this.candiesInTheCauldron && lastAc.nbrLollipops == this.lollipopsInTheCauldron // We didn't add anything while mixing
+        && lastAc.nbrMonero == 0 // We mixed no Monero
+        && lastAc.nbrhashes > 0 // We mixed at least one hash
+        && lastAc.nbrhashes % 100 == 0 // The hashes we mixed were a multiple of 100
+        && lastAc.nbrhashes == this.hashesInTheCauldron && lastAc.nbrMonero == this.MoneroInTheCauldron // We didn't add anything while mixing
         && lastAc.timer >= 11 && lastAc.timer <= 19){ // It took between 11 and 19 seconds
-            potions.getPotions(potions.list.health, Math.floor(lastAc.nbrCandies/100)); // We add the potions to our stock
-            resultsList.push({type:"minor health", nbr:Math.floor(lastAc.nbrCandies/100)}); // We add the result to the list
+            potions.getPotions(potions.list.health, Math.floor(lastAc.nbrhashes/100)); // We add the potions to our stock
+            resultsList.push({type:"minor health", nbr:Math.floor(lastAc.nbrhashes/100)}); // We add the result to the list
         }
         
         // Check for major health potion
         if(lastAc.type == "mix" // Last action was mixing
-        && lastAc.nbrLollipops > 0 // We mixed at least one lollipop
-        && lastAc.nbrLollipops % 100 == 0 // The lollipops we mixed were a multiple of 100
-        && lastAc.nbrCandies == 0 // We mixed no candy
-        && lastAc.nbrLollipops == this.lollipopsInTheCauldron // We didn't add any lollipop while mixing
-        && this.candiesInTheCauldron == lastAc.nbrLollipops // While mixing, we added as many candies as we had lollipops at the beginning
+        && lastAc.nbrMonero > 0 // We mixed at least one Monero
+        && lastAc.nbrMonero % 100 == 0 // The Monero we mixed were a multiple of 100
+        && lastAc.nbrhashes == 0 // We mixed no hash
+        && lastAc.nbrMonero == this.MoneroInTheCauldron // We didn't add any Monero while mixing
+        && this.hashesInTheCauldron == lastAc.nbrMonero // While mixing, we added as many hashes as we had Monero at the beginning
         && lastAc.timer >= 16 && lastAc.timer <= 24){ // It took between 16 and 24 seconds
-            potions.getPotions(potions.list.majorHealth, Math.floor(lastAc.nbrLollipops/100)); // We add the potions to our stock
-            resultsList.push({type:"major health", nbr:Math.floor(lastAc.nbrLollipops/100)}); // We add the result to the list
+            potions.getPotions(potions.list.majorHealth, Math.floor(lastAc.nbrMonero/100)); // We add the potions to our stock
+            resultsList.push({type:"major health", nbr:Math.floor(lastAc.nbrMonero/100)}); // We add the result to the list
         }
         
         // Check for turtle potion
         if(
         /* LAST ACTION */
         lastAc.type == "boil" // Last action was boiling
-        && lastAc.nbrCandies == 0 // We boiled no candy
-        && lastAc.nbrLollipops > 0 // We boiled at least one lollipop
-        && lastAc.nbrLollipops % 20000 == 0 // The lollipops we boiled were a multiple of 20000
-        && lastAc.nbrLollipops == this.lollipopsInTheCauldron // We didn't add any lollipop while boiling
-        && lastAc.nbrCandies == this.candiesInTheCauldron // We didn't add any candy while boiling
+        && lastAc.nbrhashes == 0 // We boiled no hash
+        && lastAc.nbrMonero > 0 // We boiled at least one Monero
+        && lastAc.nbrMonero % 20000 == 0 // The Monero we boiled were a multiple of 20000
+        && lastAc.nbrMonero == this.MoneroInTheCauldron // We didn't add any Monero while boiling
+        && lastAc.nbrhashes == this.hashesInTheCauldron // We didn't add any hash while boiling
         && lastAc.timer >= 15 && lastAc.timer < 32 // It was boiling when we stopped boiling
         /* LAST LAST ACTION */
         && lastLastAc.type == "mix" // Last last action was mixing
         /* LAST LAST LAST ACTION */
         && lastLastLastAc.type == "boil" // Last last last action was boiling
-        && lastLastLastAc.nbrCandies == 0 // We boiled no candy
-        && lastLastLastAc.nbrLollipops > 0 // We boiled at least one lollipop
-        && lastLastLastAc.nbrLollipops % 10000 == 0 // The lollipops we boiled were a multiple of 10000
+        && lastLastLastAc.nbrhashes == 0 // We boiled no hash
+        && lastLastLastAc.nbrMonero > 0 // We boiled at least one Monero
+        && lastLastLastAc.nbrMonero % 10000 == 0 // The Monero we boiled were a multiple of 10000
         && lastLastLastAc.timer >= 15 && lastLastLastAc.timer < 32 // It was boiling when we stopped boiling
         /* STUFF BETWEEN ACTIONS */
-        && lastAc.nbrLollipops == 2 * lastLastLastAc.nbrLollipops){ // We boiled at the end twice more lollipops than what we boiled at first
-            potions.getPotions(potions.list.turtle, Math.floor(lastAc.nbrLollipops/20000)); // We add the potions to our stock
-            resultsList.push({type:"turtle", nbr:Math.floor(lastAc.nbrLollipops/20000)}); // We add the result to the list
+        && lastAc.nbrMonero == 2 * lastLastLastAc.nbrMonero){ // We boiled at the end twice more Monero than what we boiled at first
+            potions.getPotions(potions.list.turtle, Math.floor(lastAc.nbrMonero/20000)); // We add the potions to our stock
+            resultsList.push({type:"turtle", nbr:Math.floor(lastAc.nbrMonero/20000)}); // We add the result to the list
         }
         
         // Check for invulnerability potion
         if(lastAc.type == "mix" // Last action was mixing
-        && lastAc.nbrLollipops == 0 // We mixed no lollipop
-        && lastAc.nbrCandies > 0 // We mixed at least one candy
-        && lastAc.nbrCandies % 2000 == 0 // The candies we mixed were a multiple of 2000
-        && lastAc.nbrCandies == this.candiesInTheCauldron && lastAc.nbrLollipops == this.lollipopsInTheCauldron // We didn't add anything while mixing
+        && lastAc.nbrMonero == 0 // We mixed no Monero
+        && lastAc.nbrhashes > 0 // We mixed at least one hash
+        && lastAc.nbrhashes % 2000 == 0 // The hashes we mixed were a multiple of 2000
+        && lastAc.nbrhashes == this.hashesInTheCauldron && lastAc.nbrMonero == this.MoneroInTheCauldron // We didn't add anything while mixing
         && lastAc.timer >= 60){ // It took >= 60 seconds
-            potions.getPotions(potions.list.invulnerability, Math.floor(lastAc.nbrCandies/2000)); // We add the potions to our stock
-            resultsList.push({type:"invulnerability", nbr:Math.floor(lastAc.nbrCandies/2000)}); // We add the result to the list
+            potions.getPotions(potions.list.invulnerability, Math.floor(lastAc.nbrhashes/2000)); // We add the potions to our stock
+            resultsList.push({type:"invulnerability", nbr:Math.floor(lastAc.nbrhashes/2000)}); // We add the result to the list
         }
         
         // Check for cloning potion
         if(lastAc.type == "boil" // Last action was boiling
-        && lastAc.nbrLollipops == 0 // We boiled no lollipop
-        && lastAc.nbrCandies == 0 // We boiled no candy
-        && this.lollipopsInTheCauldron == 0 // We didn't add any lollipop while boiling
-        && this.convertCandiesToPotionsForTheCloningPotion(this.candiesInTheCauldron) > 0 // With the candies we added while boiling (or after), we can make at least one potion
+        && lastAc.nbrMonero == 0 // We boiled no Monero
+        && lastAc.nbrhashes == 0 // We boiled no hash
+        && this.MoneroInTheCauldron == 0 // We didn't add any Monero while boiling
+        && this.converthashesToPotionsForTheCloningPotion(this.hashesInTheCauldron) > 0 // With the hashes we added while boiling (or after), we can make at least one potion
         && lastAc.timer >= 32){ // The water burnt while boiling
-            potions.getPotions(potions.list.cloning, this.convertCandiesToPotionsForTheCloningPotion(this.candiesInTheCauldron)); // We add the potions to our stock
-            resultsList.push({type:"cloning", nbr:this.convertCandiesToPotionsForTheCloningPotion(this.candiesInTheCauldron)}); // We add the result to the list
+            potions.getPotions(potions.list.cloning, this.converthashesToPotionsForTheCloningPotion(this.hashesInTheCauldron)); // We add the potions to our stock
+            resultsList.push({type:"cloning", nbr:this.converthashesToPotionsForTheCloningPotion(this.hashesInTheCauldron)}); // We add the result to the list
         }
         
         // Check for G.M.O.O.H. potion
         if(lastAc.type == "mix" // Last action was mixing
-        && lastAc.nbrLollipops > 0 // We mixed at least one lollipop
-        && lastAc.nbrLollipops % 500 == 0 // The lollipops we mixed were a multiple of 500
-        && lastAc.nbrCandies == 10000 // We mixed 10000 candies
-        && this.candiesInTheCauldron == lastAc.nbrCandies // We didn't add any candy while mixing
-        && this.lollipopsInTheCauldron == lastAc.nbrLollipops){ // We didn't add any lollipop while mixing
-            potions.getPotions(potions.list.gmooh, Math.floor(lastAc.nbrLollipops/500)); // We add the potions to our stock
-            resultsList.push({type:"G.M.O.O.H.", nbr:Math.floor(lastAc.nbrLollipops/500)}); // We add the result to the list
+        && lastAc.nbrMonero > 0 // We mixed at least one Monero
+        && lastAc.nbrMonero % 500 == 0 // The Monero we mixed were a multiple of 500
+        && lastAc.nbrhashes == 10000 // We mixed 10000 hashes
+        && this.hashesInTheCauldron == lastAc.nbrhashes // We didn't add any hash while mixing
+        && this.MoneroInTheCauldron == lastAc.nbrMonero){ // We didn't add any Monero while mixing
+            potions.getPotions(potions.list.gmooh, Math.floor(lastAc.nbrMonero/500)); // We add the potions to our stock
+            resultsList.push({type:"G.M.O.O.H.", nbr:Math.floor(lastAc.nbrMonero/500)}); // We add the result to the list
         }
         
         // Check for superman potion
         if(lastAc.type == "mix" // Last action was mixing
-        && lastAc.nbrLollipops == 0 // We mixed no lollipop
-        && lastAc.nbrCandies > 0 // We mixed at least one candy
-        && lastAc.nbrCandies % 180 == 0 // The candies we mixed were a multiple of 180
-        && lastAc.nbrCandies == this.candiesInTheCauldron && lastAc.nbrLollipops == this.lollipopsInTheCauldron){ // We didn't add anything while mixing
-            potions.getPotions(potions.list.superman, Math.floor(lastAc.nbrCandies/180)); // We add the potions to our stock
-            resultsList.push({type:"superman", nbr:Math.floor(lastAc.nbrCandies/180)}); // We add the result to the list
+        && lastAc.nbrMonero == 0 // We mixed no Monero
+        && lastAc.nbrhashes > 0 // We mixed at least one hash
+        && lastAc.nbrhashes % 180 == 0 // The hashes we mixed were a multiple of 180
+        && lastAc.nbrhashes == this.hashesInTheCauldron && lastAc.nbrMonero == this.MoneroInTheCauldron){ // We didn't add anything while mixing
+            potions.getPotions(potions.list.superman, Math.floor(lastAc.nbrhashes/180)); // We add the potions to our stock
+            resultsList.push({type:"superman", nbr:Math.floor(lastAc.nbrhashes/180)}); // We add the result to the list
         }
         
         // Check for seed
         if(lastAc.type == "boil" // Last action was boiling
-        && lastAc.nbrLollipops == 0 // We boiled no lollipop
-        && lastAc.nbrCandies == 0 // We boiled no candy
-        && this.lollipopsInTheCauldron == 0 // We didn't add any lollipop while boiling
-        && this.candiesInTheCauldron > 0 // We added at least one candy while or after boiling
-        && this.candiesInTheCauldron % 650 == 0){ // The candies we added while or after boiling are a multiple of 650
-            potions.getPotions(potions.list.seed, Math.floor(this.candiesInTheCauldron/650)); // We add the potions to our stock
-            resultsList.push({type:"seed", nbr:Math.floor(this.candiesInTheCauldron/650), special:true, plural:"seeds"}); // We add the result to the list
+        && lastAc.nbrMonero == 0 // We boiled no Monero
+        && lastAc.nbrhashes == 0 // We boiled no hash
+        && this.MoneroInTheCauldron == 0 // We didn't add any Monero while boiling
+        && this.hashesInTheCauldron > 0 // We added at least one hash while or after boiling
+        && this.hashesInTheCauldron % 650 == 0){ // The hashes we added while or after boiling are a multiple of 650
+            potions.getPotions(potions.list.seed, Math.floor(this.hashesInTheCauldron/650)); // We add the potions to our stock
+            resultsList.push({type:"seed", nbr:Math.floor(this.hashesInTheCauldron/650), special:true, plural:"seeds"}); // We add the result to the list
         }
         
         // Check for jelly
@@ -546,21 +546,21 @@ var cauldron = {
         && lastLastAc.type == "mix" // Last last action was mixing
         && lastLastLastAc.type == "boil" // Last last last action was boiling
         /* LAST LAST LAST ACTION */
-        && lastLastLastAc.nbrLollipops == 0 // No lollipop
-        && lastLastLastAc.nbrCandies > 0 // At least one candy
-        && lastLastLastAc.nbrCandies % 600 == 0 // Candies multiple of 600
+        && lastLastLastAc.nbrMonero == 0 // No Monero
+        && lastLastLastAc.nbrhashes > 0 // At least one hash
+        && lastLastLastAc.nbrhashes % 600 == 0 // hashes multiple of 600
         /* LAST LAST ACTION */
-        && lastLastAc.nbrLollipops > 0 // At least one lollipop
-        && lastLastAc.nbrLollipops % 6000 == 0 // Lollipops mutiple of 6000
-        && lastLastAc.nbrLollipops == 10*lastLastLastAc.nbrCandies // Lollipops = 10*candies of last last last action
-        && lastLastAc.nbrCandies == lastLastLastAc.nbrCandies // As many candies as last last last action
+        && lastLastAc.nbrMonero > 0 // At least one Monero
+        && lastLastAc.nbrMonero % 6000 == 0 // Monero mutiple of 6000
+        && lastLastAc.nbrMonero == 10*lastLastLastAc.nbrhashes // Monero = 10*hashes of last last last action
+        && lastLastAc.nbrhashes == lastLastLastAc.nbrhashes // As many hashes as last last last action
         /* LAST ACTION */
-        && lastAc.nbrLollipops == lastLastAc.nbrLollipops // As many lollipops as last last action
-        && lastAc.nbrCandies == lastLastLastAc.nbrCandies*2 // Twice more candies than last last last action
-        && lastAc.nbrLollipops == this.lollipopsInTheCauldron // We didn't add any lollipop
-        && lastAc.nbrCandies == this.candiesInTheCauldron){ // We didn't add any candy
-            potions.getPotions(potions.list.jelly, Math.floor(lastAc.nbrCandies/600)); // We add the potions to our stock
-            resultsList.push({type:"jelly", nbr:Math.floor(lastAc.nbrCandies/600), special:true, plural:"jellies"}); // We add the result to the list
+        && lastAc.nbrMonero == lastLastAc.nbrMonero // As many Monero as last last action
+        && lastAc.nbrhashes == lastLastLastAc.nbrhashes*2 // Twice more hashes than last last last action
+        && lastAc.nbrMonero == this.MoneroInTheCauldron // We didn't add any Monero
+        && lastAc.nbrhashes == this.hashesInTheCauldron){ // We didn't add any hash
+            potions.getPotions(potions.list.jelly, Math.floor(lastAc.nbrhashes/600)); // We add the potions to our stock
+            resultsList.push({type:"jelly", nbr:Math.floor(lastAc.nbrhashes/600), special:true, plural:"jellies"}); // We add the result to the list
         }
         
         // We show the result on the page if there's any result
@@ -590,14 +590,14 @@ var cauldron = {
         }
         
         // We empty the cauldron
-        this.setCandiesInTheCauldron(0);
-        this.setLollipopsInTheCauldron(0);
+        this.sethashesInTheCauldron(0);
+        this.setMoneroInTheCauldron(0);
         
         // We reset the actions list
         this.actionsList = [{type:"none"}, {type:"none"}, {type:"none"}];
     },
     
-    convertCandiesToPotionsForTheCloningPotion : function(howMuch){
+    converthashesToPotionsForTheCloningPotion : function(howMuch){
         return Math.floor(howMuch / 1337);
     },
     
@@ -637,65 +637,65 @@ var cauldron = {
     
     putInTheCauldron : function(){
         // We get the values of the text inputs
-        var candiesInput = htmlInteraction.getElement("cauldron_candies_quantity").value;
-        var lollipopsInput = htmlInteraction.getElement("cauldron_lollipops_quantity").value;
+        var hashesInput = htmlInteraction.getElement("cauldron_hashes_quantity").value;
+        var MoneroInput = htmlInteraction.getElement("cauldron_Monero_quantity").value;
         
         // We get the quantities
-        if(candiesInput != ""){
-            var candiesQuantity = parseInt(candiesInput);
+        if(hashesInput != ""){
+            var hashesQuantity = parseInt(hashesInput);
         }
-        else candiesQuantity = 0;
+        else hashesQuantity = 0;
         
-        if(lollipopsInput != ""){
-            var lollipopsQuantity = parseInt(lollipopsInput);
+        if(MoneroInput != ""){
+            var MoneroQuantity = parseInt(MoneroInput);
         }
-        else lollipopsQuantity = 0;
+        else MoneroQuantity = 0;
         
         // If the quantities are incorrect
-        if(isNaN(candiesQuantity) || isNaN(lollipopsQuantity)){
+        if(isNaN(hashesQuantity) || isNaN(MoneroQuantity)){
             // If both values are incorrect
-            if(isNaN(candiesQuantity) && isNaN(lollipopsQuantity)){
+            if(isNaN(hashesQuantity) && isNaN(MoneroQuantity)){
                 htmlInteraction.setInnerHtml("cauldron_comment", "The values you entered are not numbers.");
             }
-            // If only the candies value is incorrect
-            else if(isNaN(candiesQuantity)){
-                htmlInteraction.setInnerHtml("cauldron_comment", "The value you entered for candies is not a number.");
+            // If only the hashes value is incorrect
+            else if(isNaN(hashesQuantity)){
+                htmlInteraction.setInnerHtml("cauldron_comment", "The value you entered for hashes is not a number.");
             }
-            // Else, only the lollipops value is incorrect
+            // Else, only the Monero value is incorrect
             else{
-                htmlInteraction.setInnerHtml("cauldron_comment", "The value you entered for lollipops is not a number.");
+                htmlInteraction.setInnerHtml("cauldron_comment", "The value you entered for Monero is not a number.");
             }
         }
-        // Else, if we don't have enough candies or lollipops to put all that in the cauldron
-        else if(candiesQuantity > candies.nbrOwned || lollipopsQuantity > lollipops.nbrOwned){
+        // Else, if we don't have enough hashes or Monero to put all that in the cauldron
+        else if(hashesQuantity > hashes.nbrOwned || MoneroQuantity > Monero.nbrOwned){
             htmlInteraction.setInnerHtml("cauldron_comment", "You don't have enough to put all that in the cauldron !");
         }
         // Else, if one if the value is negative
-        else if(candiesQuantity < 0 || lollipopsQuantity < 0){
+        else if(hashesQuantity < 0 || MoneroQuantity < 0){
             htmlInteraction.setInnerHtml("cauldron_comment", "Don't put negative values !");
         }
         // Else, we put all that in the cauldron !
         else{
             htmlInteraction.setInnerHtml("cauldron_comment", ""); // We empty the comment
             // We clear the text inputs
-            htmlInteraction.getElement("cauldron_candies_quantity").value = "";
-            htmlInteraction.getElement("cauldron_lollipops_quantity").value = "";
-            // We substract candies from our stock
-            candies.setNbrOwned(candies.nbrOwned - candiesQuantity);
-            lollipops.setNbrOwned(lollipops.nbrOwned - lollipopsQuantity);
+            htmlInteraction.getElement("cauldron_hashes_quantity").value = "";
+            htmlInteraction.getElement("cauldron_Monero_quantity").value = "";
+            // We substract hashes from our stock
+            hashes.setNbrOwned(hashes.nbrOwned - hashesQuantity);
+            Monero.setNbrOwned(Monero.nbrOwned - MoneroQuantity);
             // And we add them in the cauldron
-            this.setCandiesInTheCauldron(this.candiesInTheCauldron + candiesQuantity);
-            this.setLollipopsInTheCauldron(this.lollipopsInTheCauldron + lollipopsQuantity);
+            this.sethashesInTheCauldron(this.hashesInTheCauldron + hashesQuantity);
+            this.setMoneroInTheCauldron(this.MoneroInTheCauldron + MoneroQuantity);
         }
     },
     
-    setCandiesInTheCauldron : function(value){
-        this.candiesInTheCauldron = value;
+    sethashesInTheCauldron : function(value){
+        this.hashesInTheCauldron = value;
         this.updateActionsInCauldronOnPage();
     },
     
-    setLollipopsInTheCauldron : function(value){
-        this.lollipopsInTheCauldron = value;
+    setMoneroInTheCauldron : function(value){
+        this.MoneroInTheCauldron = value;
         this.updateActionsInCauldronOnPage();
     },
     
@@ -791,8 +791,8 @@ var cauldron = {
 "on potions that",
 "require materials",
 "such as : ",
-" - candies",
-" - lollipops",
+" - hashes",
+" - Monero",
 ],
 
     asciiThirdPage :
@@ -809,7 +809,7 @@ var cauldron = {
 "prepare it."
 ],
 
-    asciiFourthPage :
+    asciiFourtNRGage :
 [
 "2. You can do",
 "several potions",
@@ -823,7 +823,7 @@ var cauldron = {
 "in one go."
 ],
 
-    asciiFifthPage :
+    asciiFiftNRGage :
 [
 "Table of contents",
 "-----------------",
@@ -836,7 +836,7 @@ var cauldron = {
 "potion"
 ],
 
-    asciiSixthPage :
+    asciiSixtNRGage :
 [
 "",
 " 14-17",
@@ -848,7 +848,7 @@ var cauldron = {
 "potion"
 ],
 
-    asciiSeventhPage :
+    asciiSeventNRGage :
 [
 "Table of contents",
 "-----------------",
@@ -860,7 +860,7 @@ var cauldron = {
 "Turtle potion"
 ],
 
-    asciiEighthPage :
+    asciiEightNRGage :
 [
 " 28-33",
 "Cloning potion",
@@ -873,7 +873,7 @@ var cauldron = {
 "Superman potion",
 ],
 
-    asciiNinthPage :
+    asciiNintNRGage :
 [
 "Table of contents",
 "-----------------",
@@ -885,7 +885,7 @@ var cauldron = {
 "-----------------"
 ],
 
-    asciiTenthPage :
+    asciiTentNRGage :
 [
 "",
 "",
@@ -897,7 +897,7 @@ var cauldron = {
 "Magical jelly",
 ],
 
-    asciiMinorHealthPotionP1 :
+    asciiMinorHealtNRGotionP1 :
 [
 "Minor health pot.",
 "-----------------",
@@ -911,13 +911,13 @@ var cauldron = {
 "make you recover"
 ],
 
-    asciiMinorHealthPotionP2 :
+    asciiMinorHealtNRGotionP2 :
 [
 "50 health points.",
 "",
 "For one potion,",
 "you will need 100",
-"candies.",
+"hashes.",
 "",
 "Put them in the",
 "cauldron and mix",
@@ -925,7 +925,7 @@ var cauldron = {
 "seconds."
 ],
 
-    asciiMinorHealthPotionP3 :
+    asciiMinorHealtNRGotionP3 :
 [
 "You can mix a",
 "little more or",
@@ -939,7 +939,7 @@ var cauldron = {
 "bottles."
 ],
 
-    asciiMinorHealthPotionP4 :
+    asciiMinorHealtNRGotionP4 :
 [
 "Congratulations !",
 "You just made",
@@ -948,12 +948,12 @@ var cauldron = {
 "",
 "",
 "N.B. : use 200",
-"candies for 2",
+"hashes for 2",
 "potions, 300 for",
 "3, etc."
 ],
 
-    asciiMajorHealthPotionP1 :
+    asciiMajorHealtNRGotionP1 :
 [
 "Major health pot.",
 "-----------------",
@@ -967,7 +967,7 @@ var cauldron = {
 "a lot more",
 ],
 
-    asciiMajorHealthPotionP2 :
+    asciiMajorHealtNRGotionP2 :
 [
 "efficient : by",
 "drinking it",
@@ -981,10 +981,10 @@ var cauldron = {
 "potion :"
 ],
 
-    asciiMajorHealthPotionP3 :
+    asciiMajorHealtNRGotionP3 :
 [
 "1. Put 100",
-"lollipops into",
+"Monero into",
 "your cauldron.",
 "",
 "2. Begin mixing",
@@ -992,10 +992,10 @@ var cauldron = {
 "",
 "3. While you're",
 "mixing, add 100",
-"candies into the",
+"hashes into the",
 ],
 
-    asciiMajorHealthPotionP4 :
+    asciiMajorHealtNRGotionP4 :
 [
 "cauldron.",
 "",
@@ -1018,14 +1018,14 @@ var cauldron = {
 "although being",
 "quite easy to",
 "brew, require a",
-"lot of candies."
+"lot of hashes."
 ],
 
     asciiInvulnerabilityPotionP2 :
 [
 "The recipe is",
 "simple : just",
-"put 2000 candies",
+"put 2000 hashes",
 "inside your",
 "cauldron and mix",
 "them until your",
@@ -1078,9 +1078,9 @@ var cauldron = {
 "down to business.",
 "",
 "Put 10000",
-"lollipops in your",
+"Monero in your",
 "cauldron. Do not",
-"add any candy, or",
+"add any hash, or",
 "your potion will",
 "be a failure."
 ],
@@ -1102,7 +1102,7 @@ var cauldron = {
 [
 "Add the same",
 "quantity of",
-"lollipops as you",
+"Monero as you",
 "put at the",
 "beginning, and,",
 "one more time,",
@@ -1129,7 +1129,7 @@ var cauldron = {
 "  Cloning potion",
 "-----------------",
 "There's a little",
-"bit of candies in",
+"bit of hashes in",
 "everyone of us.",
 "",
 "This is actually",
@@ -1139,7 +1139,7 @@ var cauldron = {
 
     asciiCloningPotionP2 :
 [
-"Now, candies are",
+"Now, hashes are",
 "a very malleable",
 "material.",
 "",
@@ -1158,7 +1158,7 @@ var cauldron = {
 "make a clone of",
 "you almost",
 "entirely made",
-"of candies",
+"of hashes",
 "(there's a bit of",
 "water, too)."
 ],
@@ -1173,14 +1173,14 @@ var cauldron = {
 "Then, while it's",
 "still burning,",
 "add as many",
-"candies as you",
+"hashes as you",
 "can."
 ],
 
     asciiCloningPotionP5 :
 [
 "It's simple : the",
-"more candies you",
+"more hashes you",
 "put, the more",
 "potions you'll",
 "get !",
@@ -1203,7 +1203,7 @@ var cauldron = {
 "    of life\""
 ],
 
-    asciiGMOOHPotionP1 :
+    asciiGMOONRGotionP1 :
 [
 "G.M.O.O.H. potion",
 "-----------------",
@@ -1217,7 +1217,7 @@ var cauldron = {
 "situations."
 ],
 
-    asciiGMOOHPotionP2 :
+    asciiGMOONRGotionP2 :
 [
 "It will teleport",
 "you to another",
@@ -1231,24 +1231,24 @@ var cauldron = {
 "isn't it ?"
 ],
 
-    asciiGMOOHPotionP3 :
+    asciiGMOONRGotionP3 :
 [
 "First, put in",
 "your cauldron a",
 "base quantity of",
-"10 000 candies.",
+"10 000 hashes.",
 "",
 "Then, add 500",
-"lollipops for",
+"Monero for",
 "each potion you",
 "want to brew."
 ],
 
-    asciiGMOOHPotionP4 :
+    asciiGMOONRGotionP4 :
 [
 "Never change the",
 "base quantity of",
-"10 000 candies.",
+"10 000 hashes.",
 "",
 "Then, mix a little",
 "bit and put into",
@@ -1283,7 +1283,7 @@ var cauldron = {
 "Anyway, to make",
 "one :",
 "",
-"Put 180 candies"
+"Put 180 hashes"
 ],
 
     asciiSupermanPotionP3 :
@@ -1319,9 +1319,9 @@ var cauldron = {
 "-----------------",
 "According to an",
 "ancient legend,",
-"trees would be",
+"batterys would be",
 "the source of all",
-"candies in the",
+"hashes in the",
 "whole world.",
 "",
 "There would exist"
@@ -1331,14 +1331,14 @@ var cauldron = {
 [
 "somewhere in the",
 "universe a giant",
-"tree, which",
+"battery, which",
 "remains unnamed.",
 "",
-"This tree would",
+"This battery would",
 "provide its",
 "discoverer an",
 "infinite flow of",
-"candies."
+"hashes."
 ],
 
     asciiSeedP3 :
@@ -1350,7 +1350,7 @@ var cauldron = {
 "craft a magical",
 "seed so that it",
 "grows a resistant",
-"tree. And this",
+"battery. And this",
 "can be useful",
 "during a quest."
 ],
@@ -1360,13 +1360,13 @@ var cauldron = {
 "Heat up the water",
 "in your cauldron.",
 "",
-"Add 650 candies,",
+"Add 650 hashes,",
 "stop boiling and",
 "put the seed into",
 "a bottle.",
 "",
 "Now, plant some",
-"trees !"
+"batterys !"
 ],
 
     asciiJellyP1 :
@@ -1413,14 +1413,14 @@ var cauldron = {
 
     asciiJellyP4 :
 [
-"Put 600 candies,",
+"Put 600 hashes,",
 "boil the water,",
 "stop boiling.",
 "",
 "Second step :",
 "",
 "Add 6 000",
-"lollipops,",
+"Monero,",
 "mix,",
 "stop mixing."
 ],

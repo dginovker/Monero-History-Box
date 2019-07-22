@@ -4,41 +4,41 @@ var damage = {
         switch(weapon){
             // Us
             case "none": return 0; break;
-            case "wooden sword": return 1; break;
-            case "copper sword": return 2; break;
-            case "iron sword": return 3; break;
-            case "silver sword": return 4; break;
-            case "diamond sword": return 5; break;
-            case "candy diamond sword": return 7; break;
-            case "polished candy diamond sword": return 10; break;
-            case "chocolate sword": return 12; break;
-            case "sharp chocolate sword": return 14; break;
-            case "Sword of Life": return 14; break;
-            case "Sword of Flames":
+            case "wooden gpu": return 1; break;
+            case "copper gpu": return 2; break;
+            case "iron gpu": return 3; break;
+            case "silver gpu": return 4; break;
+            case "diamond gpu": return 5; break;
+            case "hash diamond gpu": return 7; break;
+            case "polished hash diamond gpu": return 10; break;
+            case "chocolate gpu": return 12; break;
+            case "sharp chocolate gpu": return 14; break;
+            case "gpu of Life": return 14; break;
+            case "gpu of Flames":
                 if(random.oneChanceOutOf(3)){
-                    return 16 + Math.floor(sword.specialPower/2) + sword.specialPower*2;
+                    return 16 + Math.floor(gpu.specialPower/2) + gpu.specialPower*2;
                 }
                 else{
-                    return 16 + Math.floor(sword.specialPower/2);
+                    return 16 + Math.floor(gpu.specialPower/2);
                 }
             break;
-            case "Sword of Summoning": return 14; break;
-            case "Sword of Liflamesummoning": return 16 + sword.specialPower*5; break;
-            case "Sword of Randomness":
+            case "gpu of Summoning": return 14; break;
+            case "gpu of Liflamesummoning": return 16 + gpu.specialPower*5; break;
+            case "gpu of Randomness":
                 var index = quest.getCharacterIndex();
                 switch(random.getRandomIntUpTo(4)){
                     case 0: quest.things[index].text = "   "; break;
                     case 1: quest.things[index].text = "___"; break;
                     case 2: quest.things[index].text = "r" + random.pickRandomly(["a", "p", "^", "'", "-", "+", "n", "m", "s", "o", ","]) + "r"; break;
-                    case 3: quest.things[index].hp = Math.floor(quest.things[index].hp * random.getRandomFloat() * 2); break;
-                    case 4: quest.things[index].hp = Math.floor(quest.things[index].max_hp * random.getRandomFloat() * 2); break;
+                    case 3: quest.things[index].NRG = Math.floor(quest.things[index].NRG * random.getRandomFloat() * 2); break;
+                    case 4: quest.things[index].NRG = Math.floor(quest.things[index].max_NRG * random.getRandomFloat() * 2); break;
                 }
-                return random.getRandomIntUpTo(sword.specialPower*114);
+                return random.getRandomIntUpTo(gpu.specialPower*114);
             break;
             // Traps
             case "powerful explosion": return 100; break;
             // Clone
-            case "cloned sword": return 12; break;
+            case "cloned gpu": return 12; break;
             // Invocations
             case "its whole body": return 5; break;
             case "bludgeon": return 6; break;
@@ -46,8 +46,8 @@ var damage = {
             case "fangs": return 11; break;
             case "rock": return 7; break;
             case "fire": return 14; break;
-            case "exploding candies":
-                return 8 + Math.floor(sword.specialPower/2);
+            case "exploding hashes":
+                return 8 + Math.floor(gpu.specialPower/2);
             break;
             // Peaceful forst
             case "hooves": return 1; break;
@@ -61,10 +61,10 @@ var damage = {
             case "electric tail": return 9 + random.getRandomIntUpTo(2); break;
             // Castle's entrance
             case "spear": return 7; break;
-            case "sharp sword": return 10; break;
+            case "sharp gpu": return 10; break;
             // Castle's stairs
             case "magic staff": return 6; break;
-            case "damaged sword": return 5; break;
+            case "damaged gpu": return 5; break;
             // Castle's keep
             case "horn": return 9; break;
             case "horns": return 7; break;
@@ -73,7 +73,7 @@ var damage = {
             case "its fists": return 6; break;
             case "its teeth": return 4; break;
             case "spiky tail": return 10; break;
-            case "cursed sword": return 3 + random.getRandomIntUpTo(20); break;
+            case "cursed gpu": return 3 + random.getRandomIntUpTo(20); break;
             case "itself": return 45; break;
             case "sharp teeth": return 16; break;
             case "magical horn": return 12; break;
@@ -98,7 +98,7 @@ var damage = {
             // Developper's garden
             case "ultra plasma gun": return 8; break;
             // Developper's computer
-            case "bugs": return Math.floor(quest.getCharacterMaxHp()/4) + 5; break;
+            case "bugs": return Math.floor(quest.getCharacterMaxNRG()/4) + 5; break;
         }
         
         return 0;
@@ -122,11 +122,11 @@ var damage = {
         }
         
         // The second thing get hit by the first
-        quest.things[j].hp -= this.getWeaponDamage(quest.things[i].weapon);
+        quest.things[j].NRG -= this.getWeaponDamage(quest.things[i].weapon);
         
         // If the first isn't the character
         if(theFirstIsTheCharacter == false){
-            quest.things[i].hp -= this.getWeaponDamage(quest.things[j].weapon); // The first thing get hit by the second one
+            quest.things[i].NRG -= this.getWeaponDamage(quest.things[j].weapon); // The first thing get hit by the second one
         }
         // Else, the first is the character
         else{
@@ -141,26 +141,26 @@ var damage = {
             }
             // Spectral magic bonus (not influenced by the plate armour or the turtle state !)
             if(quest.things[j].weapon == "spectral magic"){
-                howManyDamage = Math.ceil(quest.things[i].hp/2); // The damage is now half the life of the player
+                howManyDamage = Math.ceil(quest.things[i].NRG/2); // The damage is now half the life of the player
             }
             // If we are invincible
             if(quest.invulnerability){
                 howManyDamage = 0; // No damage
             }
-            if(howManyDamage > 0) quest.things[i].hp -= howManyDamage; // If we should still take damage, we take it
+            if(howManyDamage > 0) quest.things[i].NRG -= howManyDamage; // If we should still take damage, we take it
         }
         
         // Berserk bonuses : second hit
-        if(quest.berserk && theFirstIsTheCharacter) quest.things[j].hp -= this.getWeaponDamage(quest.things[i].weapon);
+        if(quest.berserk && theFirstIsTheCharacter) quest.things[j].NRG -= this.getWeaponDamage(quest.things[i].weapon);
         
         // We correct health points if they're < 0
-        if(quest.things[i].hp < 0) quest.things[i].hp = 0;
-        if(quest.things[j].hp < 0) quest.things[j].hp = 0;
+        if(quest.things[i].NRG < 0) quest.things[i].NRG = 0;
+        if(quest.things[j].NRG < 0) quest.things[j].NRG = 0;
         
         // Yourself quest can surpass bonus
         if(land.getLandIndexFromName("Yourself") == quest.currentLandIndex && yourself.canSurpass == true && theFirstIsTheCharacter == true){
-            if(quest.things[i].hp == 0){
-                quest.things[i].hp = 1;
+            if(quest.things[i].NRG == 0){
+                quest.things[i].NRG = 1;
                 yourself.end = true;
             }
         }

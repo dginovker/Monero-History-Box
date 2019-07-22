@@ -13,11 +13,11 @@ var yourself = {
     move : function(){
         if(quest.things[0].type == "character" && quest.things[1].type == "mob"){
             if(this.end == false){
-                quest.things[1].max_hp = quest.things[0].max_hp;
-                quest.things[1].hp = quest.things[0].hp;
+                quest.things[1].max_NRG = quest.things[0].max_NRG;
+                quest.things[1].NRG = quest.things[0].NRG;
             }
             else{
-                quest.things[1].hp = 0;
+                quest.things[1].NRG = 0;
             }
         }
     },
@@ -53,7 +53,7 @@ var yourself = {
     makeYourself : function(){
         var index = quest.getCharacterIndex();
         
-        return land.createMob("\\o/", quest.things[index].hp, quest.things[index].max_hp, sword.name, "You", []);
+        return land.createMob("\\o/", quest.things[index].NRG, quest.things[index].max_NRG, gpu.name, "You", []);
     }
     
 };
