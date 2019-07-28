@@ -41,7 +41,7 @@ var computer = {
         hashes.setNbrEaten(random.pure2());
         hashes.sethashesPerSecond(random.pure2());
         Monero.setNbrOwned(random.pure2());
-        farm.setMoneroPlanted(random.pure2());
+        farm.setGPUInstalled(random.pure2());
         chocolateBars.setNbrOwned(random.pure2());
         potions.setPotionNbrOwned(potions.list.impInvocationScroll, random.pure2()); potions.setPotionNbrOwned(potions.list.earthquakeScroll, random.pure2()); potions.setPotionNbrOwned(potions.list.teleportScroll, random.pure2()); potions.setPotionNbrOwned(potions.list.fireScroll, random.pure2()); potions.setPotionNbrOwned(potions.list.acidRainScroll, random.pure2()); potions.updateOnPage();
         potions.setPotionNbrOwned(potions.list.gmooh, random.pure2()); potions.setPotionNbrOwned(potions.list.superman, random.pure2()); potions.setPotionNbrOwned(potions.list.cloning, random.pure2()); potions.setPotionNbrOwned(potions.list.seed, random.pure2()); potions.setPotionNbrOwned(potions.list.jelly, random.pure2()); potions.setPotionNbrOwned(potions.list.turtle, random.pure2()); potions.setPotionNbrOwned(potions.list.invulnerability, random.pure2()); potions.setPotionNbrOwned(potions.list.majorHealth, random.pure2()); potions.setPotionNbrOwned(potions.list.berserk, random.pure2()); potions.setPotionNbrOwned(potions.list.escape, random.pure2()); potions.setPotionNbrOwned(potions.list.health, random.pure2()); potions.updateOnPage();

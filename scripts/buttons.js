@@ -45,7 +45,7 @@ var buttons = {
         this.checkCoatgpuButton();
         this.checkMoneroStockShortage();
         this.checkObjects();
-        this.checkMoneroPlantingButtons();
+        this.checkMoneroInstallingButtons();
         this.checkQuestTiredTime();
     },
     
@@ -125,7 +125,7 @@ var buttons = {
     
     checkMonero : function(){
         this.checkPolishgpuButton();
-        this.checkMoneroPlantingButtons();
+        this.checkMoneroInstallingButtons();
         this.checkHut();
         this.checkMoneroStockShortage();
         this.checkComputer();
@@ -261,7 +261,7 @@ var buttons = {
         farm.checkVisibility();
         
         // Check some farm's buttons
-        this.checkMoneroPlantingButtons();
+        this.checkMoneroInstallingButtons();
         
         // Check the hashes converter visibility
         hashesConverter.checkVisibility();
@@ -270,61 +270,61 @@ var buttons = {
         cauldron.checkVisibility();
     },
     
-    checkMoneroPlantingButtons : function(){
-        // If we have the key of the Monero farm
+    checkMoneroInstallingButtons : function(){
+        // If we have the key of The GPU farm
         if(objects.list.key.have){
             // innerHtml of the Monero_buttons span
             
-            // Plant 1000 button
-            if(Monero.nbrOwned >= 1000 && farm.plantingButtonsStep < 4){
-                farm.setPlantingButtonsStep(4);
+            // Install 1000 button
+            if(Monero.nbrOwned >= 1000 && farm.installingButtonsStep < 4){
+                farm.setInstallingButtonsStep(4);
             }
-            // Plant 100 button
-            else if(Monero.nbrOwned >= 100 && farm.plantingButtonsStep < 3){
-                farm.setPlantingButtonsStep(3);
+            // Install 100 button
+            else if(Monero.nbrOwned >= 100 && farm.installingButtonsStep < 3){
+                farm.setInstallingButtonsStep(3);
             }
-            // Plant 10 button
-            else if(Monero.nbrOwned >= 10 && farm.plantingButtonsStep < 2){
-                farm.setPlantingButtonsStep(2);
+            // Install 10 button
+            else if(Monero.nbrOwned >= 10 && farm.installingButtonsStep < 2){
+                farm.setInstallingButtonsStep(2);
             }
-            // Plant 1 button
-            else if(farm.plantingButtonsStep < 1){
-                farm.setPlantingButtonsStep(1);
+            // Install 1 button
+            else if(farm.installingButtonsStep < 1){
+                farm.setInstallingButtonsStep(1);
             }
             
             // Buttons activation
             
-            // Plant 1000 button
-            if(farm.plantingButtonsStep >= 4){
-                htmlInteraction.showButton("plant_1000_Monero");
+            // Install 1000 button
+            if(farm.installingButtonsStep >= 4){
+                htmlInteraction.showButton("buy_1000_GPU_for_1000_XMR");
                 if(Monero.nbrOwned >= 1000){
-                    this.enableButton("plant_1000_Monero");
+                    this.enableButton("buy_1000_GPU_for_1000_XMR");
                 }
-                else htmlInteraction.disableButton("plant_1000_Monero");
+                else htmlInteraction.disableButton("buy_1000_GPU_for_1000_XMR");
             }
-            // Plant 100 button
-            if(farm.plantingButtonsStep >= 3){
-                htmlInteraction.showButton("plant_100_Monero");
+            // Install 100 button
+            if(farm.installingButtonsStep >= 3){
+                htmlInteraction.showButton("buy_100_GPU_for_100_XMR");
                 if(Monero.nbrOwned >= 100){
-                    this.enableButton("plant_100_Monero");
+                    this.enableButton("buy_100_GPU_for_100_XMR");
                 }
-                else htmlInteraction.disableButton("plant_100_Monero");
+                else htmlInteraction.disableButton("buy_100_GPU_for_100_XMR");
             }
-            // Plant 10 button
-            if(farm.plantingButtonsStep >= 2){
-                htmlInteraction.showButton("plant_10_Monero");
+            // Install 10 button
+            if(farm.installingButtonsStep >= 2){
+                htmlInteraction.showButton("buy_10_GPU_for_10_XMR");
                 if(Monero.nbrOwned >= 10){
-                    this.enableButton("plant_10_Monero");
+                    this.enableButton("buy_10_GPU_for_10_XMR");
                 }
-                else htmlInteraction.disableButton("plant_10_Monero");
+                else htmlInteraction.disableButton("buy_10_GPU_for_10_XMR");
             }
-            // Plant 1 button
-            if(farm.plantingButtonsStep >= 1){
-                htmlInteraction.showButton("plant_1_Monero");
+            // Install 1 button
+            if(farm.installingButtonsStep >= 1){
+                htmlInteraction.showButton("buy_1_GPU_for_1_XMR");
                 if(Monero.nbrOwned >= 1){
-                    this.enableButton("plant_1_Monero");
+                    this.enableButton("buy_1_GPU_for_1_XMR");
                 }
-                else htmlInteraction.disableButton("plant_1_Monero");
+                else htmlInteraction.disableButton("buy_1_GPU_for_1_XMR");
             }
         }
     },

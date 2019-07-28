@@ -19,7 +19,7 @@ var drops = {
         }
         
         // Notice
-        text += "\n\nThings found will be yours only if you finish the quest without dying.";
+        text += "\n\nThings found will be yours only if you finish the quest without losing power.";
         
         return text;
     },

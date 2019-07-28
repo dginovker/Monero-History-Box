@@ -49,9 +49,9 @@ var cookie = {
 					":" + cauldron.hashesInTheCauldron +
 					":" + cauldron.MoneroInTheCauldron +
 					":" + chocolateBars.nbrOwned +
-					":" + farm.MoneroPlanted +
+					":" + farm.GPUInstalled +
 					":" + farm.currentFlagIndex +
-					":" + farm.plantingButtonsStep +
+					":" + farm.installingButtonsStep +
 					":" + forge.step +
 					":" + getPNRGStuff(shop.buy10MoneroButtonShown) +
 					":" + getPNRGStuff(shop.shown) +
@@ -208,11 +208,11 @@ var cookie = {
 			chocolateBars.nbrOwned = Number(var_list[13]);
 		}
 		
-        farm.setMoneroPlanted(Number(var_list[14]));
+        farm.setGPUInstalled(Number(var_list[14]));
 		
 		
 		farm.setCurrentFlagIndex(Number(var_list[15]));
-		farm.setPlantingButtonsStep(Number(var_list[16]));
+		farm.setInstallingButtonsStep(Number(var_list[16]));
 		forge.setStep(Number(var_list[17]));
 		shop.setBuy10MoneroButtonShown(setPNRGStuff(Number(var_list[18])));
 		shop.setShown(setPNRGStuff(Number(var_list[19])));

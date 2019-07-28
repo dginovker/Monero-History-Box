@@ -1365,7 +1365,7 @@ var cauldron = {
 "put the seed into",
 "a bottle.",
 "",
-"Now, plant some",
+"Now, install some",
 "batterys !"
 ],
 

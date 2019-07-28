@@ -1,49 +1,49 @@
 var farm = {
     
     // Variables
-    MoneroPlanted : 0, // The number of Monero planted in the farm
+    GPUInstalled : 0, // The number of GPU Installed in the farm
     productionDelayType : "none", // On which delay does the farm product Monero (day, hour, min, sec...)
     MoneroPerDay : 0, // How many Monero the farm produce every day
     MoneroProduction : 0, // How many Monero the farm produce every day, hour, min, sec.. depending on the production delay type
     maxMoneroPerDay : 8640000, // = 100/sec
     flagsList : [" ~ ", " * ", "cnd", " ! ", " + ", " ? ", "/|\\"], // List of ascii flags which can appear on the farm
     currentFlagIndex : 0, // Index in the list of the current flag shown
-    plantingButtonsStep : 0, // Step of the Monero planting buttons : (= which buttons are shown, 1000, 100.. ?)
+    installingButtonsStep : 0, // Step of the Monero installing buttons : (= which buttons are shown, 1000, 100.. ?)
     
     // Functions
     calculateMoneroPerDay : function(){
-        if(this.MoneroPlanted <= 293){ // sqrt(86400) = 293
-            this.MoneroPerDay = Math.pow(this.MoneroPlanted, 2); // 293 will give 85849
+        if(this.GPUInstalled <= 293){ // sqrt(86400) = 293
+            this.MoneroPerDay = Math.pow(this.GPUInstalled, 2); // 293 will give 85849
         }
         else{ // When we're counting in Monero/sec, this function is used instead of the other one. It will stabilize the curve.
-            var prod = (this.MoneroPlanted - 122) * 500; // 194 will give 86000
+            var prod = (this.GPUInstalled - 122) * 500; // 194 will give 86000
             if(prod < this.maxMoneroPerDay) this.MoneroPerDay = prod;
             else this.MoneroPerDay = this.maxMoneroPerDay;
         }
     },
     
-    setPlantingButtonsStep : function(value){
+    setInstallingButtonsStep : function(value){
         // Set the value
-        this.plantingButtonsStep = value;
+        this.installingButtonsStep = value;
         
         // Update on page
-        switch(this.plantingButtonsStep){
+        switch(this.installingButtonsStep){
             case 1:
-                htmlInteraction.setInnerHtml("Monero_buttons", "<button class=\"home_button\" id=\"plant_1_Monero\" onClick=\"farm.plantMonero(1);\">Plant 1 Monero</button>");
+                htmlInteraction.setInnerHtml("Monero_buttons", "<button class=\"home_button\" id=\"buy_1_GPU_for_1_XMR\" onClick=\"farm.installMonero(1);\">Buy 1 GPU for 1 XMR</button>");
             break;
             case 2:
-                htmlInteraction.setInnerHtml("Monero_buttons", "Plant <button class=\"home_button\" id=\"plant_1_Monero\" onClick=\"farm.plantMonero(1);\">1</button><button class=\"home_button\" id=\"plant_10_Monero\" onClick=\"farm.plantMonero(10);\" style=\"visibility:hidden\">10</button> Monero");
+                htmlInteraction.setInnerHtml("Monero_buttons", "Install <button class=\"home_button\" id=\"buy_1_GPU_for_1_XMR\" onClick=\"farm.installMonero(1);\">1</button><button class=\"home_button\" id=\"buy_10_GPU_for_10_XMR\" onClick=\"farm.installMonero(10);\" style=\"visibility:hidden\">10</button> GPU (1 GPU/XMR)");
             break;
             case 3:
-                htmlInteraction.setInnerHtml("Monero_buttons", "Plant <button class=\"home_button\" id=\"plant_1_Monero\" onClick=\"farm.plantMonero(1);\">1</button><button class=\"home_button\" id=\"plant_10_Monero\" onClick=\"farm.plantMonero(10);\" style=\"visibility:hidden\">10</button><button class=\"home_button\" id=\"plant_100_Monero\" onClick=\"farm.plantMonero(100);\" style=\"visibility:hidden\">100</button> Monero");
+                htmlInteraction.setInnerHtml("Monero_buttons", "Install <button class=\"home_button\" id=\"buy_1_GPU_for_1_XMR\" onClick=\"farm.installMonero(1);\">1</button><button class=\"home_button\" id=\"buy_10_GPU_for_10_XMR\" onClick=\"farm.installMonero(10);\" style=\"visibility:hidden\">10</button><button class=\"home_button\" id=\"buy_100_GPU_for_100_XMR\" onClick=\"farm.installMonero(100);\" style=\"visibility:hidden\">100</button> GPU (1 GPU/XMR)");
             break;
             case 4:
-                htmlInteraction.setInnerHtml("Monero_buttons", "Plant <button class=\"home_button\" id=\"plant_1_Monero\" onClick=\"farm.plantMonero(1);\">1</button><button class=\"home_button\" id=\"plant_10_Monero\" onClick=\"farm.plantMonero(10);\" style=\"visibility:hidden\">10</button><button class=\"home_button\" id=\"plant_100_Monero\" onClick=\"farm.plantMonero(100);\" style=\"visibility:hidden\">100</button><button class=\"home_button\" id=\"plant_1000_Monero\" onClick=\"farm.plantMonero(1000);\" style=\"visibility:hidden\">1000</button> Monero");
+                htmlInteraction.setInnerHtml("Monero_buttons", "Install <button class=\"home_button\" id=\"buy_1_GPU_for_1_XMR\" onClick=\"farm.installMonero(1);\">1</button><button class=\"home_button\" id=\"buy_10_GPU_for_10_XMR\" onClick=\"farm.installMonero(10);\" style=\"visibility:hidden\">10</button><button class=\"home_button\" id=\"buy_100_GPU_for_100_XMR\" onClick=\"farm.installMonero(100);\" style=\"visibility:hidden\">100</button><button class=\"home_button\" id=\"buy_1000_GPU_for_1000_XMR\" onClick=\"farm.installMonero(1000);\" style=\"visibility:hidden\">1000</button> GPU (1 GPU/XMR)");
             break;
         }
         
         // Check the buttons
-        buttons.checkMoneroPlantingButtons();
+        buttons.checkMoneroInstallingButtons();
     },
     
     clickedOnTheBigMonero : function(){
@@ -66,19 +66,19 @@ var farm = {
         }
     },
     
-    plantMonero : function(number){
+    installMonero : function(number){
         if(Monero.nbrOwned >= number){
             Monero.setNbrOwned(Monero.nbrOwned - number);
-            this.setMoneroPlanted(this.MoneroPlanted + number);
+            this.setGPUInstalled(this.GPUInstalled + number);
         }
     },
     
-    setMoneroPlanted : function(value){
+    setGPUInstalled : function(value){
         // We change the value
-        this.MoneroPlanted = value;
+        this.GPUInstalled = value;
         
         // We update on page
-        htmlInteraction.setInnerHtml("Monero_planted", "Monero planted : " + this.MoneroPlanted);
+        htmlInteraction.setInnerHtml("GPU_Installed", "GPU Installed : " + this.GPUInstalled);
         
         // We re calculate stuff
         this.calculateMoneroPerDay();
