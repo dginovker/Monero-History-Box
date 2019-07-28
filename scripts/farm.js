@@ -29,16 +29,16 @@ var farm = {
         // Update on page
         switch(this.installingButtonsStep){
             case 1:
-                htmlInteraction.setInnerHtml("Monero_buttons", "<button class=\"home_button\" id=\"install_1_Monero\" onClick=\"farm.installMonero(1);\">Install 1 Monero</button>");
+                htmlInteraction.setInnerHtml("Monero_buttons", "<button class=\"home_button\" id=\"buy_1_GPU_for_1_XMR\" onClick=\"farm.installMonero(1);\">Buy 1 GPU for 1 XMR</button>");
             break;
             case 2:
-                htmlInteraction.setInnerHtml("Monero_buttons", "Install <button class=\"home_button\" id=\"install_1_Monero\" onClick=\"farm.installMonero(1);\">1</button><button class=\"home_button\" id=\"install_10_Monero\" onClick=\"farm.installMonero(10);\" style=\"visibility:hidden\">10</button> Monero");
+                htmlInteraction.setInnerHtml("Monero_buttons", "Install <button class=\"home_button\" id=\"buy_1_GPU_for_1_XMR\" onClick=\"farm.installMonero(1);\">1</button><button class=\"home_button\" id=\"buy_10_GPU_for_10_XMR\" onClick=\"farm.installMonero(10);\" style=\"visibility:hidden\">10</button> Monero");
             break;
             case 3:
-                htmlInteraction.setInnerHtml("Monero_buttons", "Install <button class=\"home_button\" id=\"install_1_Monero\" onClick=\"farm.installMonero(1);\">1</button><button class=\"home_button\" id=\"install_10_Monero\" onClick=\"farm.installMonero(10);\" style=\"visibility:hidden\">10</button><button class=\"home_button\" id=\"install_100_Monero\" onClick=\"farm.installMonero(100);\" style=\"visibility:hidden\">100</button> Monero");
+                htmlInteraction.setInnerHtml("Monero_buttons", "Install <button class=\"home_button\" id=\"buy_1_GPU_for_1_XMR\" onClick=\"farm.installMonero(1);\">1</button><button class=\"home_button\" id=\"buy_10_GPU_for_10_XMR\" onClick=\"farm.installMonero(10);\" style=\"visibility:hidden\">10</button><button class=\"home_button\" id=\"buy_100_GPU_for_100_XMR\" onClick=\"farm.installMonero(100);\" style=\"visibility:hidden\">100</button> Monero");
             break;
             case 4:
-                htmlInteraction.setInnerHtml("Monero_buttons", "Install <button class=\"home_button\" id=\"install_1_Monero\" onClick=\"farm.installMonero(1);\">1</button><button class=\"home_button\" id=\"install_10_Monero\" onClick=\"farm.installMonero(10);\" style=\"visibility:hidden\">10</button><button class=\"home_button\" id=\"install_100_Monero\" onClick=\"farm.installMonero(100);\" style=\"visibility:hidden\">100</button><button class=\"home_button\" id=\"install_1000_Monero\" onClick=\"farm.installMonero(1000);\" style=\"visibility:hidden\">1000</button> GPUs (1 XMR = 1 GPU)");
+                htmlInteraction.setInnerHtml("Monero_buttons", "Install <button class=\"home_button\" id=\"buy_1_GPU_for_1_XMR\" onClick=\"farm.installMonero(1);\">1</button><button class=\"home_button\" id=\"buy_10_GPU_for_10_XMR\" onClick=\"farm.installMonero(10);\" style=\"visibility:hidden\">10</button><button class=\"home_button\" id=\"buy_100_GPU_for_100_XMR\" onClick=\"farm.installMonero(100);\" style=\"visibility:hidden\">100</button><button class=\"home_button\" id=\"buy_1000_GPU_for_1000_XMR\" onClick=\"farm.installMonero(1000);\" style=\"visibility:hidden\">1000</button> GPUs (1 XMR = 1 GPU)");
             break;
         }
         

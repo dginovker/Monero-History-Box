@@ -13,7 +13,7 @@ var Monero = {
             this.setNbrOwned(this.nbrOwned + 1);
             this.setNbrBought(this.nbrBought + 1);
             this.setNbrInStock(this.nbrInStock - 1);
-            shop.setMerchantSpeech("Thanks for buyin'! Here's your " + this.getFlavour() + " flavor Monero.");
+            shop.setMerchantSpeech("Thanks for them hash'rs! Here's your " + this.getContributor() + " inspired payout of Monero.");
         }
     },
     
@@ -28,11 +28,11 @@ var Monero = {
         else shop.setMerchantSpeech("I'm sorry, we don't have enough Monero in stock to sell you ten of them. We currently have " + this.nbrInStock + " Monero in stock.");
     },
     
-    getFlavour : function(){
-        var fruits = ["apple", "strawberry", "grape", "blackberry", "orange", "watermelon", "banana", "pear", "cherry", "raspberry", "mandarin", "lime", "peach", "apricot", "blueberry", "kiwifruit", "lychee", "pineapple"];
-        var uncommon = ["chocolate", "cookie", "pancake", "water", "tomato", "kitten"];
-        var unrealistic = ["leprechaun", "korrigan", "Monero", "snow", "storm", "door", "dracula"];
-        var abstract = ["gluttony", "desire", "love", "causality", "fatalism", "cuteness"];
+    getContributor : function(){
+        var contributor = ["moneromooo-monero", "fluffypony", "stoffu", "hyc", "warptangent", "tewinget", "mbg033", "Jaqueeee", "radfish", "mikezackles", "vtnerd", "anonimal", "NanoAkron", "ph4r05", "TheCharlatan", "kenshi84", "mathstuf", "oranjuice", "xiphon", "Gingeropolous", "iDunk5400", "IPGlider", "MoroccanMalinois", "luigi1111", "jtgrassie", "cslashm", "rfree2monero", "rbrunner7", "ranok", "glv2", "erikd", "cryptochangements34", "erciccione", "Neozaru", "ston1th", "naughtyfox", "emesik", "codehalo", "selsta", "jakoblind", "vickio", "vdo", "oyvkva", "moneroexamples", "Doy-lee", "mrwhythat", "m2049r", "leonklingele", "dersen#52dave-andersen", "bigreddmachine", "Timo614", "SChernykh", "xmr-eric", "tmoravec", "paulshapiro", "jeandudey", "homdx", "cole-lightfighter", "MaxXor", "vasild", "tomsmeding", "nvmd", "jcktm", "h4sh3d", "guzzijones", "fireice-uk", "campassi", "bclermont", "Jkat", "zone117x", "xnbya", "vicsn", "thaerkh", "paybee", "ordtrogen", "ndorf", "me0wmix", "lancillotto", "jwinterm", "jonathancross", "fhirschmann", "cmars", "SarangNoether", "JollyMort", "who-biz", "rockhouse", "rex4539", "omani", "normoes", "jsejcksn", "h908714124", "glemercier", "gene-telligent", "einsteinsfool", "Sylvyrfysh", "JesusRami", "0AnythingTechPro", "dsc__"]
+        var community = ["dEBRUYNE_1", "SamsungGalaxyPlayer", "needmoney90"];
+        var core = ["fluffypony", "smooth_xmr", "tacotime", "luigi1111", "NoodleDoodle", "ArticMine", "Othe", "eizh", "davidlatapie", "binaryFate"];
+        var originals = ["Satoshi Nakamoto", "Nicolas van Saberhagen", "DStrange", "Antonio Juarez"];
         
         var chances = [];
         if(this.nbrBought < 10) chances = [1];
@@ -59,10 +59,10 @@ var Monero = {
         else chances = [0.1, 0.2, 0.3];
         
         var r = random.getRandomFloat()
-        if(r < chances[0]) return random.pickRandomly(fruits);
-        else if(r < chances[1]) return random.pickRandomly(uncommon);
-        else if(r < chances[2]) return random.pickRandomly(unrealistic);
-        else return random.pickRandomly(abstract);
+        if(r < chances[0]) return random.pickRandomly(contributor);
+        else if(r < chances[1]) return random.pickRandomly(community);
+        else if(r < chances[2]) return random.pickRandomly(core);
+        else return random.pickRandomly(originals);
     },
     
     delivery : function(){

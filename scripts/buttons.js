@@ -296,35 +296,35 @@ var buttons = {
             
             // Install 1000 button
             if(farm.installingButtonsStep >= 4){
-                htmlInteraction.showButton("install_1000_Monero");
+                htmlInteraction.showButton("buy_1000_GPU_for_1000_XMR");
                 if(Monero.nbrOwned >= 1000){
-                    this.enableButton("install_1000_Monero");
+                    this.enableButton("buy_1000_GPU_for_1000_XMR");
                 }
-                else htmlInteraction.disableButton("install_1000_Monero");
+                else htmlInteraction.disableButton("buy_1000_GPU_for_1000_XMR");
             }
             // Install 100 button
             if(farm.installingButtonsStep >= 3){
-                htmlInteraction.showButton("install_100_Monero");
+                htmlInteraction.showButton("buy_100_GPU_for_100_XMR");
                 if(Monero.nbrOwned >= 100){
-                    this.enableButton("install_100_Monero");
+                    this.enableButton("buy_100_GPU_for_100_XMR");
                 }
-                else htmlInteraction.disableButton("install_100_Monero");
+                else htmlInteraction.disableButton("buy_100_GPU_for_100_XMR");
             }
             // Install 10 button
             if(farm.installingButtonsStep >= 2){
-                htmlInteraction.showButton("install_10_Monero");
+                htmlInteraction.showButton("buy_10_GPU_for_10_XMR");
                 if(Monero.nbrOwned >= 10){
-                    this.enableButton("install_10_Monero");
+                    this.enableButton("buy_10_GPU_for_10_XMR");
                 }
-                else htmlInteraction.disableButton("install_10_Monero");
+                else htmlInteraction.disableButton("buy_10_GPU_for_10_XMR");
             }
             // Install 1 button
             if(farm.installingButtonsStep >= 1){
-                htmlInteraction.showButton("install_1_Monero");
+                htmlInteraction.showButton("buy_1_GPU_for_1_XMR");
                 if(Monero.nbrOwned >= 1){
-                    this.enableButton("install_1_Monero");
+                    this.enableButton("buy_1_GPU_for_1_XMR");
                 }
-                else htmlInteraction.disableButton("install_1_Monero");
+                else htmlInteraction.disableButton("buy_1_GPU_for_1_XMR");
             }
         }
     },
