@@ -2,7 +2,7 @@ var objects = {
 
     // Variables
     list : {
-        key : {have:false, found:false, text:"a key", name:"The Monero farm's key.", description:"This key brings a Monero farm to your Mining Rig."},
+        key : {have:false, found:false, text:"a key", name:"The GPU farm's key.", description:"This key brings a Monero farm to your Mining Rig."},
         boots : {have:false, found:false, text:"a pair of boots", name:"The seven-league boots.", description:"These boots increase your speed during quests."},
         swampMap : {have:false, found:false, text:"a map", name:"The map to the Swampy Swamp.", description:"The Swampy Swamp is the swampiest swamp you've ever seen."},
         hutMap : {have:false, found:false, text:"a map", name:"The map to the sorceress' hut.", description:"In this hut lives a powerful witch ! She might help you... but not for free."},

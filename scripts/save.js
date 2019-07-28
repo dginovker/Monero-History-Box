@@ -38,9 +38,9 @@ function save() {
 					"cauldronhashes: " + cauldron.hashesInTheCauldron + "\n" + 
 					"cauldronMonero: " + cauldron.MoneroInTheCauldron + "\n" + 
 					"chocolateBarsNbrOwned: " + chocolateBars.nbrOwned + "\n" + 
-					"farmMoneroPlanted: " + farm.MoneroPlanted + "\n" + 
+					"farmGPUInstalled: " + farm.GPUInstalled + "\n" +
 					"farmCurrentFlagIndex: " + farm.currentFlagIndex + "\n" + 
-					"farmPlantingButtonsStep: " + farm.plantingButtonsStep + "\n" + 
+					"farmInstallingButtonsStep: " + farm.installingButtonsStep + "\n" +
 					"forgeStep: " + forge.step + "\n" + 
 					"shopMoneroButtonsShown: " + getPNRGStuff(shop.buy10MoneroButtonShown) + "\n" +
 					"shopShown: " + getPNRGStuff(shop.shown) + "\n" +
