@@ -55,8 +55,8 @@ function save() {
 					"mainNbrOfSecondsSinceLastMinInterval: " + main.nbrOfSecondsSinceLastMinInterval + "\n" + 
 					"mainNbrOfSecondsSinceLastHourInterval: " + main.nbrOfSecondsSinceLastHourInterval + "\n" + 
 					"mainNbrOfSecondsSinceLastDayInterval: " + main.nbrOfSecondsSinceLastDayInterval + "\n" + 
-					"mountGoblinBgpuChestProbability: " + mountGoblin.bgpuChestProbability + "\n" +
-					"peacefulForestBgpuChestProbability: " + peacefulForest.bgpuChestProbability + "\n" +
+					"mountBrokenCPUBgpuTeslaBatteryProbability: " + mountBrokenCPU.bgpuTeslaBatteryProbability + "\n" +
+					"peacefulForestBgpuTeslaBatteryProbability: " + peacefulForest.bgpuTeslaBatteryProbability + "\n" +
 					"peacefulForestPoniesEncountered: " + peacefulForest.poniesEncountered + "\n" + 
 					"objectsHaveObjectKey: " + getPNRGStuff(objects.list.key.have) + "\n" +
 					"objectsHaveObjectHutMap: " + getPNRGStuff(objects.list.hutMap.have) + "\n" +
@@ -117,5 +117,5 @@ function save() {
 	
 	var filename = "hashbox_" + year.substring(2, 4) + month + day + "_" + hour + "-" + min;
 	var blob = new Blob([save_text], {type: "text/plain;charset=utf-8"});
-	saveAs(blob, filename+".cs");
+	saveAs(blob, filename+".tar.gz");
 }

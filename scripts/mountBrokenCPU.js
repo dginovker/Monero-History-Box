@@ -1,15 +1,15 @@
-var mountGoblin = {
+var mountBrokenCPU = {
 
     // Variables
-    bgpuChestProbability : 50,
+    bgpuTeslaBatteryProbability : 50,
 
     // Functions
     onload : function(){
-        land.addLand("Mount Goblin", 28, 1, this.load.bind(this), this.getText.bind(this));
+        land.addLand("School", 28, 1, this.load.bind(this), this.getText.bind(this));
     },
     
-    setBgpuChestProbability : function(value){
-        this.bgpuChestProbability = value;
+    setBgpuTeslaBatteryProbability : function(value){
+        this.bgpuTeslaBatteryProbability = value;
     },
     
     load : function(){
@@ -17,18 +17,18 @@ var mountGoblin = {
             if(random.flipACoin()){
                 // If we're not at the top of the mount
                 if(i < 12 || i > 15){
-                    // 1 chance out of x we spawn a CHS (chest !!)
-                    if(random.oneChanceOutOf(this.bgpuChestProbability)){
-                        this.setBgpuChestProbability(this.bgpuChestProbability + 50);
-                        quest.things[i] = quest.makeBgpuChest();
+                    // 1 chance out of x we spawn a TBT (Tesla battery !!)
+                    if(random.oneChanceOutOf(this.bgpuTeslaBatteryProbability)){
+                        this.setBgpuTeslaBatteryProbability(this.bgpuTeslaBatteryProbability + 50);
+                        quest.things[i] = quest.makeBgpuTeslaBattery();
                     }
                     // 1 chance out of 7 we spaw a GSB
-                    else if(random.oneChanceOutOf(7)) quest.things[i] = land.createMob("GSB", 20, 5 + random.getRandomIntUpTo(5), "claws", "A sick goblin. It smells.", [drops.createDrop("hashes", 3 + random.getRandomIntUpTo(3))]);
-                    // Else we spawn a GOB
-                    else quest.things[i] = land.createMob("GOB", 20, 20, "claws", "A nasty goblin.", [drops.createDrop("hashes", 3 + random.getRandomIntUpTo(3))]);
+                    else if(random.oneChanceOutOf(7)) quest.things[i] = land.createMob("SBC", 20, 5 + random.getRandomIntUpTo(5), "broken CPU", "A sick very broken CPU. It smells.", [drops.createDrop("hashes", 3 + random.getRandomIntUpTo(3))]);
+                    // Else we spawn a BCP
+                    else quest.things[i] = land.createMob("BCP", 20, 20, "broken CPU", "A nasty broken CPU.", [drops.createDrop("hashes", 3 + random.getRandomIntUpTo(3))]);
                 }
                 else{
-                    quest.things[i] = land.createMob("GTB", 30, 30, "dagger", "A tenacious goblin. Oh, he has a dagger, too.", [drops.createDrop("hashes", 9 + random.getRandomIntUpTo(9)), drops.createDrop("object", "key", random.oneChanceOutOf(2)), drops.createDrop("object", "boots", random.oneChanceOutOf(5)), drops.createDrop("object", "swampMap", random.oneChanceOutOf(5)), drops.createDrop("object", "hutMap", random.oneChanceOutOf(5))]);
+                    quest.things[i] = land.createMob("OBC", 30, 30, "1Ccpu", "An overclocked broken CPU. Oh, he has a 1 core, too.", [drops.createDrop("hashes", 9 + random.getRandomIntUpTo(9)), drops.createDrop("object", "key", random.oneChanceOutOf(2)), drops.createDrop("object", "boots", random.oneChanceOutOf(5)), drops.createDrop("object", "swampMap", random.oneChanceOutOf(5)), drops.createDrop("object", "hutMap", random.oneChanceOutOf(5))]);
                 }
             }
         }

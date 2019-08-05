@@ -1,16 +1,16 @@
 var peacefulForest = {
     
     // Variables
-    bgpuChestProbability : 100,
+    bgpuTeslaBatteryProbability : 100,
     poniesEncountered : 0,
     
     // Functions
     onload : function(){
-        land.addLand("The peaceful forest", 30, 0, this.load.bind(this), this.getText.bind(this), this.move.bind(this));
+        land.addLand("The scrapyard", 30, 0, this.load.bind(this), this.getText.bind(this), this.move.bind(this));
     },
     
-    setBgpuChestProbability : function(value){
-        this.bgpuChestProbability = value;
+    setBgpuTeslaBatteryProbability : function(value){
+        this.bgpuTeslaBatteryProbability = value;
     },
     
     move : function(){
@@ -49,10 +49,10 @@ var peacefulForest = {
                     addedAPoney = true;
                     quest.things[i] = this.makeWoodPoney();
                 }
-                // 1 chance out of x we spawn a CHS (chest !!)
-                else if(random.oneChanceOutOf(this.bgpuChestProbability)){
-                    this.setBgpuChestProbability(this.bgpuChestProbability + 50);
-                    quest.things[i] = quest.makeBgpuChest();
+                // 1 chance out of x we spawn a TBT (Tesla battery !!)
+                else if(random.oneChanceOutOf(this.bgpuTeslaBatteryProbability)){
+                    this.setBgpuTeslaBatteryProbability(this.bgpuTeslaBatteryProbability + 50);
+                    quest.things[i] = quest.makeBgpuTeslaBattery();
                 }
                 // Else we spawn a battery
                 else quest.things[i] = land.createMob("|||", 5, 5, "none", "A battery. It can sometimes power a hash.", [drops.createDrop("hashes", random.getRandomIntUpTo(1)), drops.createDrop("object", "key", random.oneChanceOutOf(2))]);

@@ -244,11 +244,11 @@ var castleKeep = {
                     break;
                 }
             break;
-            // The chests room
+            // The Tesla batterys room
             case 5:
                 for(var i = 1; i < this.realSize - 1; i++){
                     if(random.oneChanceOutOf(3)){
-                        quest.things[i] = quest.makeOpenChest();
+                        quest.things[i] = quest.makeOpenTeslaBattery();
                     }
                 }
                 this.mobsAreMoving = false;

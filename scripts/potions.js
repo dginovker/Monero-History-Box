@@ -476,7 +476,7 @@ var potions = {
         
         switch(random.getRandomIntUpTo(3)){
             case 0:
-                quest.begin(false, land.getLandIndexFromName("The peaceful forest"));
+                quest.begin(false, land.getLandIndexFromName("The scrapyard"));
             break;
             case 1:
                 quest.begin(false, land.getLandIndexFromName("cowLevel"));
