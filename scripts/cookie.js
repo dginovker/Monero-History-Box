@@ -66,8 +66,8 @@ var cookie = {
 					":" + main.nbrOfSecondsSinceLastMinInterval +
 					":" + main.nbrOfSecondsSinceLastHourInterval +
 					":" + main.nbrOfSecondsSinceLastDayInterval +
-					":" + mountGoblin.bgpuChestProbability +
-					":" + peacefulForest.bgpuChestProbability +
+					":" + mountBrokenCPU.bgpuTeslaBatteryProbability +
+					":" + peacefulForest.bgpuTeslaBatteryProbability +
 					":" + peacefulForest.poniesEncountered +
 					":" + getPNRGStuff(objects.list.key.have) +
 					":" + getPNRGStuff(objects.list.hutMap.have) +
@@ -242,8 +242,8 @@ var cookie = {
 		main.setNbrOfSecondsSinceLastMinInterval(Number(var_list[28]));
 		main.setNbrOfSecondsSinceLastHourInterval(Number(var_list[29]));
 		main.setNbrOfSecondsSinceLastDayInterval(Number(var_list[30]));
-		mountGoblin.setBgpuChestProbability(Number(var_list[31]));
-		peacefulForest.setBgpuChestProbability(Number(var_list[32]));
+		mountBrokenCPU.setBgpuTeslaBatteryProbability(Number(var_list[31]));
+		peacefulForest.setBgpuTeslaBatteryProbability(Number(var_list[32]));
 		peacefulForest.setPoniesEncountered(Number(var_list[33]));
 		//
 		

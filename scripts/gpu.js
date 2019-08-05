@@ -8,7 +8,7 @@ var gpu = {
     summonList : [],
     
     // Functions
-    
+
     onload : function(){
         this.summonList.push({name:"imps", summonFunction:quest.makeImp.bind(quest), powerNeeded:1});
         this.summonList.push({name:"orcs", summonFunction:quest.makeOrc.bind(quest), powerNeeded:2});

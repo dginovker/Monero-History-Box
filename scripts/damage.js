@@ -51,10 +51,10 @@ var damage = {
             break;
             // Peaceful forst
             case "hooves": return 1; break;
-            // Mount Goblin
-            case "claws": return 1; break;
-            case "dagger": return 2; break;
-            // Underwater cave
+            // School
+            case "broken CPU": return 1; break;
+            case "1Ccpu": return 2; break;
+            // Factory at night
             case "fins": return 2; break;
             case "tentacles": return 1 + random.getRandomIntUpTo(5); break;
             case "giant tail": return 8; break;
@@ -90,7 +90,7 @@ var damage = {
             case "cactus thorns": return 4; break;
             // Hell
             case "religion": return 80; break;
-            case "demon claws": return 40; break;
+            case "demon broken CPU": return 40; break;
             case "spikes": return 15; break;
             case "?": return 50; break;
             // Chuck norris

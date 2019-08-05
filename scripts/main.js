@@ -13,8 +13,8 @@ var main = {
         
         // Various loads
         peacefulForest.onload();
-        mountGoblin.onload();
-        underwaterCave.onload();
+        mountBrokenCPU.onload();
+        factoryAtNight.onload();
         castleEntrance.onload();
         castleStairs.onload();
         castleKeep.onload();
