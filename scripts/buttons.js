@@ -206,27 +206,27 @@ var buttons = {
             if(Monero.stockShortage == true){
                 // We show the stock shortage and hide the buttons used to buy Monero
                 htmlInteraction.setElementVisibility("Monero_stock_shortage", true);
-                htmlInteraction.hideButton("buy_1_Monero");
-                htmlInteraction.hideButton("buy_10_Monero");
+                htmlInteraction.hideButton("payout_1_Monero");
+                htmlInteraction.hideButton("payout_10_Monero");
             }
             // Else, no Monero stock shortage
             else{
                 // We don't show the stock shortage
                 htmlInteraction.setElementVisibility("Monero_stock_shortage", false);
                 // We show and maybe enable the button to buy one Monero
-                htmlInteraction.showButton("buy_1_Monero");
-                if(hashes.nbrOwned >= shop.oneMoneroPrice) this.enableButton("buy_1_Monero");
-                else htmlInteraction.disableButton("buy_1_Monero");
+                htmlInteraction.showButton("payout_1_Monero");
+                if(hashes.nbrOwned >= shop.oneMoneroPrice) this.enableButton("payout_1_Monero");
+                else htmlInteraction.disableButton("payout_1_Monero");
                 // We maybe show and maybe enable the button to buy 500 Monero
                 if(hashes.nbrOwned >= shop.tenMoneroPrice || shop.buy10MoneroButtonShown){
                     shop.setBuy10MoneroButtonShown(true);
-                    if(htmlInteraction.isElementVisible("buy_10_Monero") == false){ // If it wasn't shown yet
-                        htmlInteraction.showButton("buy_10_Monero");
+                    if(htmlInteraction.isElementVisible("payout_10_Monero") == false){ // If it wasn't shown yet
+                        htmlInteraction.showButton("payout_10_Monero");
                         shop.setMerchantSpeech("There's now a discount for 10 Monero! Buy them please.. I need Moneroies!");
                     }
-                    this.enableButton("buy_10_Monero");
+                    this.enableButton("payout_10_Monero");
                 }
-                if(hashes.nbrOwned < shop.tenMoneroPrice) htmlInteraction.disableButton("buy_10_Monero");
+                if(hashes.nbrOwned < shop.tenMoneroPrice) htmlInteraction.disableButton("payout_10_Monero");
             }
         }
     },
