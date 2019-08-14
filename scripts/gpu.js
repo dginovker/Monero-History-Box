@@ -197,16 +197,17 @@ if(potions.list.health.nbrOwned > 0){
     
     // Ascii art
     asciiWoodengpuWithButton : "\
-      .\n\
-     / \\\n\
-     | |\n\
-     | |  <button class=\"home_button\" id=\"buy_wooden_gpu\" onClick=\"gpu.buyThisgpu(\'wooden gpu\');\">Buy a wooden tier gpu (150 hashes)</button>\n\
-     | |\n\
-     | |\n\
-   `--8--\'\n\
-      8\n\
-      0",
-      
+    \ __________\n\
+    | ________ |\n\
+    ||12345678||\n\
+    |\"\"\"\"\"\"\"\"\"\"|\  <button class=\"home_button\" id=\"buy_wooden_gpu\" onClick=\"gpu.buyThisgpu(\'wooden gpu\');\">Buy a wooden tier gpu (150 hashes)</button>\n\
+    |[M|#|C][-]|\n\
+    |[7|8|9][+]|\n\
+    |[4|5|6][x]|\n\
+    |[1|2|3][%]|\n\
+    |[.|O|:][=]|\n\
+    \"----------\"",
+
     asciiWoodengpuWithoutButton : "Wooden gpu\n\
      .\n\
     / \\\n\
