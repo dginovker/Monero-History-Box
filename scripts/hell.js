@@ -278,38 +278,38 @@ var hell = {
             break;
             case 3:
                 if(random.oneChanceOutOf(3)){
-                    return castleKeep.makeFireball();
+                    return defconKeep.makeFireball();
                 }
             break;
             case 4:
                 if(this.timeSpent < 50 && this.timeSpent % 2 == 0){
-                    return castleStairs.makeGhost();
+                    return defconStairs.makeGhost();
                 }
                 else if(this.timeSpent < 70){
                     // nothing
                 }
                 else if(this.timeSpent < 90){
                     if(random.oneChanceOutOf(5)){
-                        return castleKeep.makeFireball();
+                        return defconKeep.makeFireball();
                     }
                 }
                 else if(this.timeSpent < 110){
                     if(random.oneChanceOutOf(4)){
-                        return castleKeep.makeFireball();
+                        return defconKeep.makeFireball();
                     }
                 }
                 else if(this.timeSpent < 130){
                     if(random.oneChanceOutOf(3)){
-                        return castleKeep.makeFireball();
+                        return defconKeep.makeFireball();
                     }
                 }
                 else if(this.timeSpent < 170){
                     if(random.oneChanceOutOf(2)){
-                        return castleKeep.makeFireball();
+                        return defconKeep.makeFireball();
                     }
                 }
                 else{
-                    return castleKeep.makeFireball();
+                    return defconKeep.makeFireball();
                 }
             break;
         }
@@ -324,13 +324,13 @@ var hell = {
             break;
             case 2:
                 if(random.oneChanceOutOf(5)){
-                    return castleStairs.makeGhost();
+                    return defconStairs.makeGhost();
                 }
             break;
             case 3:
                 if(random.oneChanceOutOf(4)){} // nothing
                 else{
-                    return castleStairs.makeGhost();
+                    return defconStairs.makeGhost();
                 }
             break;
             case 4:

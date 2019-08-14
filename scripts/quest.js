@@ -469,12 +469,6 @@ var quest = {
     
     fillWithNoneThings : function(){
         var things = [];
-        console.log("fillWithNoneThings");
-        console.log(this.currentLandIndex);
-        console.log(this.land);
-        console.log(land.list[this.currentLandIndex]);
-        console.log(things);
-        console.log(this.makeNoneThing());
         for(var i = 0; i < land.list[this.currentLandIndex].size; i++) things.push(this.makeNoneThing());
         return things;
     }

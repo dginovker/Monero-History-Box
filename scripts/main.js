@@ -14,10 +14,10 @@ var main = {
         // Various loads
         peacefulForest.onload();
         mountBrokenCPU.onload();
-        factoryAtNight.onload();
-        castleEntrance.onload();
-        castleStairs.onload();
-        castleKeep.onload();
+        shipFactory.onload();
+        defconEntrance.onload();
+        defconStairs.onload();
+        defconKeep.onload();
         cowLevel.onload();
         sea.onload();
         desert.onload();

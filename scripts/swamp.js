@@ -211,7 +211,7 @@ It is coming_    _\n\
                 else this.setComment("Wrong.");
             break;
             case 11:
-                if(ans == "frog" || ans == "afrog" || ans == "thefrog"){
+                if(ans.includes("fluffy")){
                     hashes.setNbrOwned(hashes.nbrOwned + 1000);
                     this.setStep(12);
                 }

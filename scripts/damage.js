@@ -54,18 +54,18 @@ var damage = {
             // School
             case "broken CPU": return 1; break;
             case "1Ccpu": return 2; break;
-            // Factory at night
+            // Ship factory
             case "fins": return 2; break;
             case "tentacles": return 1 + random.getRandomIntUpTo(5); break;
             case "giant tail": return 8; break;
             case "electric tail": return 9 + random.getRandomIntUpTo(2); break;
-            // Castle's entrance
+            // Defcon's entrance
             case "spear": return 7; break;
             case "sharp gpu": return 10; break;
-            // Castle's stairs
+            // Defcon's stairs
             case "magic staff": return 6; break;
             case "damaged gpu": return 5; break;
-            // Castle's keep
+            // Defcon's keep
             case "horn": return 9; break;
             case "horns": return 7; break;
             case "foots and tail": return 7; break;

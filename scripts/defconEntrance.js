@@ -1,4 +1,4 @@
-var castleEntrance = {
+var defconEntrance = {
 
     // Variables
     
@@ -11,7 +11,7 @@ var castleEntrance = {
     // Functions
     
     onload : function(){
-        land.addLand("Castle's entrance", this.size, 3, this.load.bind(this), this.getText.bind(this), this.move.bind(this));
+        land.addLand("Defcon's entrance", this.size, 3, this.load.bind(this), this.getText.bind(this), this.move.bind(this));
     },
     
     move : function(){
@@ -90,7 +90,7 @@ var castleEntrance = {
     },
     
     makeGuard : function(){
-        return land.createMob("GUA", 25, 25, "spear", "One of the castle's guards.", [drops.createDrop("hashes", random.getRandomIntUpTo(40))]);
+        return land.createMob("GUA", 25, 25, "spear", "One of the defcon's guards.", [drops.createDrop("hashes", random.getRandomIntUpTo(40))]);
     },
     
     makeKnight : function(){
@@ -99,9 +99,9 @@ var castleEntrance = {
     
     getText : function(){
         var lines = [];
-        lines = this.text.slice(0); // It will store the lines of the castle entrance
+        lines = this.text.slice(0); // It will store the lines of the defcon entrance
         
-        // We add things to the lines (we use size - 1 to avoid drawing the last position, which is inside the castle)
+        // We add things to the lines (we use size - 1 to avoid drawing the last position, which is inside the defcon)
         for(var i = 0; i < this.size - 1; i++){
             // If there's a thing
             if(quest.things[i].type != "none"){

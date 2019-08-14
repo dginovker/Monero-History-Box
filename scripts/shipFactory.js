@@ -1,18 +1,18 @@
-var factoryAtNight = {
+var shipFactory = {
     
     // Variables
     size : 54,
     
     // Functions
     onload : function(){
-        land.addLand("Factory at night", this.size, 2, this.load.bind(this), this.getText.bind(this), this.move.bind(this));
+        land.addLand("Ship factory", this.size, 2, this.load.bind(this), this.getText.bind(this), this.move.bind(this));
     },
     
     move : function(){
         var defeated = false;
         if(quest.things[51].type != "mob") defeated = true; // The Whale has been defeated
         
-        // We create a variable to store the lines of the factory at night, depending on if the Whale is defeated or not
+        // We create a variable to store the lines of the ship factory, depending on if the Whale is defeated or not
         var lines = [];
         if(defeated == false) lines = this.text.slice(0);
         else lines = this.textWithoutWhale.slice(0);
@@ -39,7 +39,7 @@ var factoryAtNight = {
     load : function(){
         for(var i = 1; i < quest.things.length; i++){
             if(i < 47){ // If we're before the place of octopus guardians
-                if(i > 2){ // If we're in a factory at night
+                if(i > 2){ // If we're in a ship factory
                     if(i >= 26 && i <= 35){ // Eel zone
                         if(random.oneChanceOutOf(3)){
                             quest.things[i] = land.createMob("WKR", 3, 3, "Wrench", "A worker. Weak, but wants to play games.", [drops.createDrop("hashes", 50 + random.getRandomIntUpTo(50))]);
@@ -58,7 +58,7 @@ var factoryAtNight = {
                     quest.things[i] = land.createMob("MLS", 45, 45, "Liquid steel", "A giant rod of liquidated steel. I bet that energy can power my GPU.", []);
             }
             else if(i == 51){ // It's the whale (52 and 53 must be void)
-                quest.things[i] = land.createMob("The ship.", 100, 100, "Cowardly Captain", "<a href=\"https://www.youtube.com/watch?v=5_A8dq2fA5o\">The Captain will flee the ship, leaving the students to drown if threatened..</a>", [drops.createDrop("hashes", 400 + random.getRandomIntUpTo(400)), drops.createDrop("object", "key", true), drops.createDrop("object", "hutMap", true), drops.createDrop("object", "swampMap", true), drops.createDrop("object", "boots", true), drops.createDrop("object", "wellMap", true), drops.createDrop("object", "magicianHat", true), drops.createDrop("object", "pinkRing", true), drops.createDrop("object", "forgeMap", true)]);
+                quest.things[i] = land.createMob("The ship.", 100, 100, "Cowardly Captain", "Rumor has it fluffypony lost his <a href='https://youtu.be/TATpQ7KogBc?t=1954'>pkey</a> on this ship..", [drops.createDrop("hashes", 400 + random.getRandomIntUpTo(400)), drops.createDrop("object", "key", true), drops.createDrop("object", "hutMap", true), drops.createDrop("object", "swampMap", true), drops.createDrop("object", "boots", true), drops.createDrop("object", "wellMap", true), drops.createDrop("object", "magicianHat", true), drops.createDrop("object", "pinkRing", true), drops.createDrop("object", "forgeMap", true)]);
             }
         }
     },
@@ -67,7 +67,7 @@ var factoryAtNight = {
         var defeated = false;
         if(quest.things[51].type != "mob") defeated = true; // The Whale has been defeated
         
-        // We create a variable to store the lines of the factory at night, depending on if the Whale is defeated or not
+        // We create a variable to store the lines of the ship factory, depending on if the Whale is defeated or not
         var lines = [];
         if(defeated == false) lines = this.text.slice(0);
         else lines = this.textWithoutWhale.slice(0);

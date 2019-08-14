@@ -1,4 +1,4 @@
-var castleKeep = {
+var defconKeep = {
 
     // Variables
     
@@ -16,7 +16,7 @@ var castleKeep = {
     // Functions
     
     onload : function(){
-        land.addLand("Castle's keep", this.size, 5, this.load.bind(this), this.getText.bind(this), this.move.bind(this));
+        land.addLand("Defcon's keep", this.size, 5, this.load.bind(this), this.getText.bind(this), this.move.bind(this));
     },
     
     move : function(){
@@ -66,7 +66,7 @@ var castleKeep = {
     
     getText : function(){
         var lines = [];
-        lines = this.text.slice(0); // It will store the lines of the castle keep
+        lines = this.text.slice(0); // It will store the lines of the defcon keep
         
         // We add things
         for(var i = 0; i < this.realSize; i++){
@@ -163,7 +163,7 @@ var castleKeep = {
             // Room 0 : we put some guards
             case 0:
                 for(var i = 2; i < this.realSize - 1; i+=3){
-                    quest.things[i] = castleEntrance.makeGuard();
+                    quest.things[i] = defconEntrance.makeGuard();
                 }
                 this.mobsAreMoving = true;
             break;
@@ -174,7 +174,7 @@ var castleKeep = {
                     case 0:
                         for(var i = 2; i < this.realSize - 1; i++){
                             if(random.oneChanceOutOf(4)){
-                                quest.things[i] = castleEntrance.makeKnight();
+                                quest.things[i] = defconEntrance.makeKnight();
                             }
                         }
                         this.mobsAreMoving = true;
@@ -184,13 +184,13 @@ var castleKeep = {
                         for(var i = 2; i < this.realSize - 1; i++){
                             if(random.oneChanceOutOf(4)){
                                 switch(random.getRandomIntUpTo(6)){
-                                    case 0: quest.things[i] = castleKeep.makeKomodoDragon(); break;
-                                    case 1: quest.things[i] = castleKeep.makeRhinoceros(); break;
-                                    case 2: quest.things[i] = castleKeep.makeGaur(); break;
-                                    case 3: quest.things[i] = castleKeep.makeDromornisStirtoni(); break;
-                                    case 4: quest.things[i] = castleKeep.makeGorilla(); break;
-                                    case 5: quest.things[i] = castleKeep.makeCapybara(); break;
-                                    case 6: quest.things[i] = castleKeep.makeDoedicurus(); break;
+                                    case 0: quest.things[i] = defconKeep.makeKomodoDragon(); break;
+                                    case 1: quest.things[i] = defconKeep.makeRhinoceros(); break;
+                                    case 2: quest.things[i] = defconKeep.makeGaur(); break;
+                                    case 3: quest.things[i] = defconKeep.makeDromornisStirtoni(); break;
+                                    case 4: quest.things[i] = defconKeep.makeGorilla(); break;
+                                    case 5: quest.things[i] = defconKeep.makeCapybara(); break;
+                                    case 6: quest.things[i] = defconKeep.makeDoedicurus(); break;
                                 }
                             }
                         }
@@ -199,7 +199,7 @@ var castleKeep = {
                     case 2:
                         for(var i = 4; i < this.realSize - 1; i++){
                             if(random.oneChanceOutOf(5)){
-                                quest.things[i] = castleStairs.makeGhost();
+                                quest.things[i] = defconStairs.makeGhost();
                             }
                         }
                         this.mobsAreMoving = true;
@@ -324,7 +324,7 @@ var castleKeep = {
     },
     
     makeDragon : function(){
-        return land.createMob(",((", 1000, 1000, "flames", "A dragon !! Kill him and the castle will be yours.", []);
+        return land.createMob(",((", 1000, 1000, "flames", "A dragon !! Kill him and the defcon will be yours.", []);
     },
     
     asciiDragon :
