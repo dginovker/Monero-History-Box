@@ -23,7 +23,11 @@ var Monero = {
             this.setNbrOwned(this.nbrOwned + 10);
             this.setNbrBought(this.nbrBought + 10);
             this.setNbrInStock(this.nbrInStock - 10);
-            shop.setMerchantSpeech("Thanks for buyin'! Here's your ten Monero. Various flavours.");
+
+            let tenContributors = "";
+            for (let i = 0; i < 10; i ++)
+                tenContributors += this.getContributor() + "\n";
+            shop.setMerchantSpeech("Thanks for buyin'! Here's your ten Monero. Inspired by a number of generous folk: " + tenContributors);
         }
         else shop.setMerchantSpeech("I'm sorry, we don't have enough Monero in stock to sell you ten of them. We currently have " + this.nbrInStock + " Monero in stock.");
     },

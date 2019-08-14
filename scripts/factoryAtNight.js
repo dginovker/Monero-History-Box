@@ -42,23 +42,23 @@ var factoryAtNight = {
                 if(i > 2){ // If we're in a factory at night
                     if(i >= 26 && i <= 35){ // Eel zone
                         if(random.oneChanceOutOf(3)){
-                            quest.things[i] = land.createMob("EEL", 3, 3, "electric tail", "An eel. Weak, but aggressive.", [drops.createDrop("hashes", 50 + random.getRandomIntUpTo(50))]);
+                            quest.things[i] = land.createMob("WKR", 3, 3, "Wrench", "A worker. Weak, but wants to play games.", [drops.createDrop("hashes", 50 + random.getRandomIntUpTo(50))]);
                         }
                     }
                     else{
                         if(random.flipACoin()){
                             var n = 9 + random.getRandomIntUpTo(3);
-                            quest.things[i] = land.createMob("F~H", n, n, "fins", "A fish. Easy to beat.", [drops.createDrop("hashes", 5)]);
+                            quest.things[i] = land.createMob("CBT", n, n, "Gears", "A conveyor belt. Easy to beat.", [drops.createDrop("hashes", 5)]);
                         }
                     }
                 }
             }
             else if(i <= 50){ // If we're before the whale
                 if(random.getRandomIntUpTo(10) <= 9) // 9/10 chances
-                    quest.things[i] = land.createMob("OCT", 45, 45, "tentacles", "An octopus guardian. It looks dangerous.", []);
+                    quest.things[i] = land.createMob("MLS", 45, 45, "Liquid steel", "A giant rod of liquidated steel. I bet that energy can power my GPU.", []);
             }
             else if(i == 51){ // It's the whale (52 and 53 must be void)
-                quest.things[i] = land.createMob("The Whale.", 100, 100, "giant tail", "The Whale does not like to be disturbed.", [drops.createDrop("hashes", 400 + random.getRandomIntUpTo(400)), drops.createDrop("object", "key", true), drops.createDrop("object", "hutMap", true), drops.createDrop("object", "swampMap", true), drops.createDrop("object", "boots", true), drops.createDrop("object", "wellMap", true), drops.createDrop("object", "magicianHat", true), drops.createDrop("object", "pinkRing", true), drops.createDrop("object", "forgeMap", true)]);
+                quest.things[i] = land.createMob("The ship.", 100, 100, "Cowardly Captain", "<a href=\"https://www.youtube.com/watch?v=5_A8dq2fA5o\">The Captain will flee the ship, leaving the students to drown if threatened..</a>", [drops.createDrop("hashes", 400 + random.getRandomIntUpTo(400)), drops.createDrop("object", "key", true), drops.createDrop("object", "hutMap", true), drops.createDrop("object", "swampMap", true), drops.createDrop("object", "boots", true), drops.createDrop("object", "wellMap", true), drops.createDrop("object", "magicianHat", true), drops.createDrop("object", "pinkRing", true), drops.createDrop("object", "forgeMap", true)]);
             }
         }
     },

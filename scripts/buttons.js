@@ -222,7 +222,7 @@ var buttons = {
                     shop.setBuy10MoneroButtonShown(true);
                     if(htmlInteraction.isElementVisible("payout_10_Monero") == false){ // If it wasn't shown yet
                         htmlInteraction.showButton("payout_10_Monero");
-                        shop.setMerchantSpeech("There's now a discount for 10 Monero! Buy them please.. I need Moneroies!");
+                        shop.setMerchantSpeech("There's now a discount for 10 Monero! Buy them please.. I need haashesss!");
                     }
                     this.enableButton("payout_10_Monero");
                 }
