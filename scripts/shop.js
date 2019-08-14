@@ -149,8 +149,7 @@ var shop = {
             htmlInteraction.setElementVisibility("shop", true);
             this.setMerchantSpeech("Hello, I'm the Pool Operator. I would do anything for hashes. My Monero are delicious!");
         }
-        console.log("Visibilifiying it");
-        document.getElementById("Monero").style.visibility = "visible";
+        document.getElementById("Monero_ascii").style.visibility = "visible";
 
         // And the Monero we can buy :)
         this.showProduct("Monero");
