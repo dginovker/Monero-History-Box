@@ -1,4 +1,4 @@
-var castleStairs = {
+var defconStairs = {
 
     // Variables
     
@@ -8,7 +8,7 @@ var castleStairs = {
     // Functions
     
     onload : function(){
-        land.addLand("Castle's stairs", this.size, 4, this.load.bind(this), this.getText.bind(this), this.move.bind(this));
+        land.addLand("Defcon's stairs", this.size, 4, this.load.bind(this), this.getText.bind(this), this.move.bind(this));
     },
     
     move : function(){

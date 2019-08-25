@@ -47,10 +47,10 @@
         <!-- The lands -->
         <script type="text/javascript" src="./scripts/peacefulForest.js"></script>
         <script type="text/javascript" src="./scripts/mountBrokenCPU.js"></script>
-        <script type="text/javascript" src="./scripts/factoryAtNight.js"></script>
-        <script type="text/javascript" src="./scripts/castleEntrance.js"></script>
-        <script type="text/javascript" src="./scripts/castleStairs.js"></script>
-        <script type="text/javascript" src="./scripts/castleKeep.js"></script>
+        <script type="text/javascript" src="./scripts/shipFactory.js"></script>
+        <script type="text/javascript" src="./scripts/defconEntrance.js"></script>
+        <script type="text/javascript" src="./scripts/defconStairs.js"></script>
+        <script type="text/javascript" src="./scripts/defconKeep.js"></script>
         <script type="text/javascript" src="./scripts/cowLevel.js"></script>
         <script type="text/javascript" src="./scripts/sea.js"></script>
         <script type="text/javascript" src="./scripts/desert.js"></script>
@@ -204,12 +204,12 @@
 
 <div style="float:left;">
 
-<pre id="Monero" style="visibility:hidden">
-    _
-   (<span onclick="shop.clickedOnMonero();">_</span>)  <button class="home_button" id="buy_1_Monero" onclick="Monero.buy1();"></button>
-    |   <span id="Monero_stock_shortage" style="visibility:hidden">Stock shortage : we will be restocked soon.</span>
-    |   <button class="home_button" id="buy_10_Monero" onclick="Monero.buy10();" style="visibility:hidden"></button>
-    |</pre>
+<pre id="Monero_ascii" style="visibility:hidden">
+     _______
+    /       \ <span onclick="shop.clickedOnMonero();"></span> <button class="home_button" id="payout_1_Monero" onclick="Monero.buy1();"></button>
+   |  |\/|  | <span id="Monero_stock_shortage" style="visibility:hidden">Stock shortage : we will be restocked soon.</span>
+   |  |  |  |  <button class="home_button" id="payout_10_Monero" onclick="Monero.buy10();" style="visibility:hidden"></button>
+    |______/</pre>
         
 <pre id="gpu_with_button"></pre>
          
@@ -311,7 +311,7 @@
                 <span id="mood"></span><br/>
                 
                 <span id="quest_form">
-                    <button class="home_button" id="quest_button" onclick="quest.begin(true);">Go look for energy!</button> <!-- "Go look for energy to power your GPU! !" -->
+                    <button class="home_button" id="quest_button" onclick="quest.begin(true);">Go look for hashes!</button> <!-- "Go look for energy to power your GPU! !" -->
                     Destination : <select id="quest_destination"></select> <!-- Quest list -->
                 </span>
             
@@ -391,7 +391,7 @@
             <a target="_blank" href="./faq.html">F.A.Q.</a> - 
             <a target="_blank" href="./credits.html">Credits</a> - 
             <a target="_blank" href="https://github.com/dginovker/Monero-History-Box">Source Code</a> - 
-            <b><a target="_blank" href="http://hashbox2.github.io/hashbox">Original Game</a></b>
+            <b><a target="_blank" href="http://candybox2.github.io/candybox">Original Game</a></b>
             <br/><br/>
         </div>
 

@@ -63,20 +63,20 @@ var shop = {
         if(this.clickingOnMonerotep <= 4){
             this.oneMoneroPrice = 60;
             this.tenMoneroPrice = 500;
-            htmlInteraction.setInnerHtml("buy_1_Monero", "Buy 1 Monero (60 hashes)");
-            htmlInteraction.setInnerHtml("buy_10_Monero", "Buy 10 Monero (500 hashes)");
+            htmlInteraction.setInnerHtml("payout_1_Monero", "Take 1 Monero payout (60 hashes)");
+            htmlInteraction.setInnerHtml("payout_10_Monero", "Take 10 Monero payout (500 hashes)");
         }
         else if(this.clickingOnMonerotep >= 5 && this.clickingOnMonerotep < 15){
             this.oneMoneroPrice = 60 - (this.clickingOnMonerotep - 4);
             this.tenMoneroPrice = 500 - (this.clickingOnMonerotep - 4) * 5;
-            htmlInteraction.setInnerHtml("buy_1_Monero", "Buy a Monero (" + this.oneMoneroPrice + " hashes)");
-            htmlInteraction.setInnerHtml("buy_10_Monero", "Buy 10 Monero (" + this.tenMoneroPrice + " hashes)");
+            htmlInteraction.setInnerHtml("payout_1_Monero", "Take 1 Monero payout (" + this.oneMoneroPrice + " hashes)");
+            htmlInteraction.setInnerHtml("payout_10_Monero", "Take 10 Monero payout (" + this.tenMoneroPrice + " hashes)");
         }
         else{
             this.oneMoneroPrice = 60 - (14 - 4);
             this.tenMoneroPrice = 500 - (14 - 4) * 5;
-            htmlInteraction.setInnerHtml("buy_1_Monero", "Buy a Monero (" + this.oneMoneroPrice + " hashes)");
-            htmlInteraction.setInnerHtml("buy_10_Monero", "Buy 10 Monero (" + this.tenMoneroPrice + " hashes)");
+            htmlInteraction.setInnerHtml("payout_1_Monero", "Take 1 Monero payout (" + this.oneMoneroPrice + " hashes)");
+            htmlInteraction.setInnerHtml("payout_10_Monero", "Take 10 Monero payout (" + this.tenMoneroPrice + " hashes)");
         }
     },
     
@@ -149,7 +149,8 @@ var shop = {
             htmlInteraction.setElementVisibility("shop", true);
             this.setMerchantSpeech("Hello, I'm the Pool Operator. I would do anything for hashes. My Monero are delicious!");
         }
-        
+        document.getElementById("Monero_ascii").style.visibility = "visible";
+
         // And the Monero we can buy :)
         this.showProduct("Monero");
     },
