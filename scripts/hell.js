@@ -342,7 +342,7 @@ var hell = {
     },
     
     makeDemon : function(){
-        return land.createMob("DEM", 90, 90, "demon claws", "A demon.", []);
+        return land.createMob("DEM", 90, 90, "demon broken CPU", "A demon.", []);
     },
     
     makeBanshee : function(){

@@ -76,7 +76,7 @@ var developperComputer = {
     },
     
     makeBug : function(){
-        return land.createMob(random.pickRandomly(["B", "U", "G"]) + random.pickRandomly(["B", "U", "G"]) + random.pickRandomly(["B", "U", "G"]), 300 + random.getRandomIntUpTo(10000000), 300, random.pickRandomly(["itself", "religion", "flames", "sharp teeth", "cursed gpu", "claws", "dagger", "fins", "hooves", "magic staff", "horn", "silver gpu", "chocolate gpu", "demon claws"]), "A bug !", [drops.createDrop("hashes", 100000000)]);
+        return land.createMob(random.pickRandomly(["B", "U", "G"]) + random.pickRandomly(["B", "U", "G"]) + random.pickRandomly(["B", "U", "G"]), 300 + random.getRandomIntUpTo(10000000), 300, random.pickRandomly(["itself", "religion", "flames", "sharp teeth", "cursed gpu", "broken CPU", "1Ccpu", "fins", "hooves", "magic staff", "horn", "silver gpu", "chocolate gpu", "demon broken CPU"]), "A bug !", [drops.createDrop("hashes", 100000000)]);
     },
     
     makeDev : function(){

@@ -1,18 +1,18 @@
-var underwaterCave = {
+var factoryAtNight = {
     
     // Variables
     size : 54,
     
     // Functions
     onload : function(){
-        land.addLand("Underwater cave", this.size, 2, this.load.bind(this), this.getText.bind(this), this.move.bind(this));
+        land.addLand("Factory at night", this.size, 2, this.load.bind(this), this.getText.bind(this), this.move.bind(this));
     },
     
     move : function(){
         var defeated = false;
         if(quest.things[51].type != "mob") defeated = true; // The Whale has been defeated
         
-        // We create a variable to store the lines of the underwater cave, depending on if the Whale is defeated or not
+        // We create a variable to store the lines of the factory at night, depending on if the Whale is defeated or not
         var lines = [];
         if(defeated == false) lines = this.text.slice(0);
         else lines = this.textWithoutWhale.slice(0);
@@ -39,7 +39,7 @@ var underwaterCave = {
     load : function(){
         for(var i = 1; i < quest.things.length; i++){
             if(i < 47){ // If we're before the place of octopus guardians
-                if(i > 2){ // If we're underwater
+                if(i > 2){ // If we're in a factory at night
                     if(i >= 26 && i <= 35){ // Eel zone
                         if(random.oneChanceOutOf(3)){
                             quest.things[i] = land.createMob("EEL", 3, 3, "electric tail", "An eel. Weak, but aggressive.", [drops.createDrop("hashes", 50 + random.getRandomIntUpTo(50))]);
@@ -67,7 +67,7 @@ var underwaterCave = {
         var defeated = false;
         if(quest.things[51].type != "mob") defeated = true; // The Whale has been defeated
         
-        // We create a variable to store the lines of the underwater cave, depending on if the Whale is defeated or not
+        // We create a variable to store the lines of the factory at night, depending on if the Whale is defeated or not
         var lines = [];
         if(defeated == false) lines = this.text.slice(0);
         else lines = this.textWithoutWhale.slice(0);

@@ -398,8 +398,8 @@ var quest = {
     },
     
     defineMood : function(){
-        if(this.tiredTime == 0) htmlInteraction.setInnerHtml("mood", "You're in the pink! Ready for fighting!");
-        else htmlInteraction.setInnerHtml("mood", "You're tired. You have to wait before doing another quest. Waiting time : " + this.tiredTime);
+        if(this.tiredTime == 0) htmlInteraction.setInnerHtml("mood", "Your rig is fully prepared!");
+        else htmlInteraction.setInnerHtml("mood", "Your GPU is overheated. You have to wait before looking for more power. Waiting time : " + this.tiredTime);
         htmlInteraction.setElementVisibility("mood", true);
     },
     
@@ -423,12 +423,12 @@ var quest = {
         return {type:"none", text:"___"};
     },
     
-    makeBgpuChest : function(){
-        return land.createMob("CHS", 80, 80, "none", "A chest !! Very rare.", [drops.createDrop("hashes", 300 + random.getRandomIntUpTo(500)), drops.createDrop("object", "key", true), drops.createDrop("object", "boots", random.oneChanceOutOf(3)), drops.createDrop("object", "swampMap", random.oneChanceOutOf(3)), drops.createDrop("object", "hutMap", random.oneChanceOutOf(3))]);
+    makeBgpuTeslaBattery : function(){
+        return land.createMob("TBT", 80, 80, "none", "A Tesla battery !! Very rare.", [drops.createDrop("hashes", 300 + random.getRandomIntUpTo(500)), drops.createDrop("object", "key", true), drops.createDrop("object", "boots", random.oneChanceOutOf(3)), drops.createDrop("object", "swampMap", random.oneChanceOutOf(3)), drops.createDrop("object", "hutMap", random.oneChanceOutOf(3))]);
     },
     
-    makeOpenChest : function(){
-        return land.createMob("CHS", 1, 1, "none", "An open chest, full of hashes !", [drops.createDrop("hashes", 6000 + random.getRandomIntUpTo(2000))]);
+    makeOpenTeslaBattery : function(){
+        return land.createMob("TBT", 1, 1, "none", "An open Tesla battery, full of hashes !", [drops.createDrop("hashes", 6000 + random.getRandomIntUpTo(2000))]);
     },
     
     makeImp : function(){
@@ -469,6 +469,12 @@ var quest = {
     
     fillWithNoneThings : function(){
         var things = [];
+        console.log("fillWithNoneThings");
+        console.log(this.currentLandIndex);
+        console.log(this.land);
+        console.log(land.list[this.currentLandIndex]);
+        console.log(things);
+        console.log(this.makeNoneThing());
         for(var i = 0; i < land.list[this.currentLandIndex].size; i++) things.push(this.makeNoneThing());
         return things;
     }
